@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>review - Sneha Fitness</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<style>
+    :root {
+    --primary: #ff4757;
+    --secondary: #2ed573;
+    --dark: #2f3542;
+    --light: #f1f2f6;
+    }
+
+  body {
+      font-family: 'Poppins', sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .review-section {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.1rem;
+      margin-bottom: 20px;
+      color: #2f3542;
+    }
+
+    .average-rating {
+      text-align: center;
+      font-size: 2.1rem;
+      margin-bottom: 20px;
+      padding: 40px 20px;
+      color: #444;
+    }
+
+    .stars {
+      color: gold;
+      font-size: 1.2rem;
+    }
+
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .review-card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: 0.3s ease;
+    }
+
+    .review-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .review-card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      border: 2px solid #ff4757;
+    }
+
+    .review-card h4 {
+      margin: 10px 0 5px;
+      color: #333;
+    }
+
+    .review-card p {
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    .review-stars {
+      margin: 10px 0;
+    }
+
+    .reaction {
+      margin-top: 15px;
+    }
+
+    .reaction button {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      margin: 0 8px;
+      transition: 0.2s;
+    }
+
+    .reaction button:hover {
+      transform: scale(1.2);
+    }
+
+    .reaction .liked {
+      color: #2ed573;
+    }
+
+    .reaction .disliked {
+      color: #ff6b81;
+    }
+    @media (max-width: 500px) {
+      h2 {
+        font-size: 1.8rem;
+      }
+    }
+</style>
+
+<body>
+    <header>
+        <div class="container flex">
+            <div class="logo">Sneha<span>Fitness</span></div>
+            <nav>
+                <ul>
+                    <li><a href="index1.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                    <li><a href="review.html" class="active">Review</a></li>
+                    <li><a href="logout.php" class="btn" style="background-color: #ff4757;">Sign Out</a></li>
+                </ul>
+            </nav>
+            
+        </div>
+    </header>
+
+  <div class="review-section">
+    <h2>What Our Members Say</h2>
+    <div class="average-rating">
+      <span>Average Rating:</span> 
+      <span class="stars">★★★★☆</span> 
+      <span>(4.6 / 5)</span>
+    </div>
+
+    <div class="reviews">
+
+      <!-- Review 1 -->
+      <div class="review-card">
+        <img src="https://media.istockphoto.com/id/2151051413/photo/portrait-of-young-indian-slim-body-woman-measuring-her-waist-track-weight-loss-progress-gym.jpg?s=612x612&w=0&k=20&c=fnFDfVVwbflx1yGZ6H_LXDGlD_Xw4B2SBsfO3AsUIrc=" alt="Ritika">
+        <h4>Ritika Sharma</h4>
+        <div class="review-stars stars">★★★★★</div>
+        <p>“Amazing support and personalized guidance! I lost 5kg in 2 months and feel stronger than ever.”</p>
+        <div class="reaction">
+          <button class="liked"><i class="fas fa-thumbs-up"></i></button>
+          <button class="disliked"><i class="fas fa-thumbs-down"></i></button>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="review-card">
+        <img src="https://media.istockphoto.com/id/876810166/photo/young-indian-man-keeping-healthy-and-fit-at-the-gym.jpg?s=612x612&w=0&k=20&c=yzWJp3RBFgL_5kYc5Uqcf44wsx8Xcn6bOZBcw_YSjQA=" alt="Rahul">
+        <h4>Rahul Mehta</h4>
+        <div class="review-stars stars">★★★★☆</div>
+        <p>“Workouts are great and easy to follow. Nutrition plan really made a difference. Highly recommend!”</p>
+        <div class="reaction">
+          <button class="liked"><i class="fas fa-thumbs-up"></i></button>
+          <button class="disliked"><i class="fas fa-thumbs-down"></i></button>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review-card">
+        <img src="https://media.istockphoto.com/id/1219401222/photo/fit-woman-with-dumbbell-shape-water-bottle-at-park.jpg?s=612x612&w=0&k=20&c=yODqpV-oJfPm2tVlue-w1b6lKJmZ6GPEI5Q20NfOUkk=" alt="Anjali">
+        <h4>Anjali Deshpande</h4>
+        <div class="review-stars stars">★★★★★</div>
+        <p>“Yoga sessions are so calming and have helped my back pain. Trainer Priya is wonderful!”</p>
+        <div class="reaction">
+          <button class="liked"><i class="fas fa-thumbs-up"></i></button>
+          <button class="disliked"><i class="fas fa-thumbs-down"></i></button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+        <div class="container">
+            <div class="logo">Sneha<span>Fitness</span></div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Sneha Fitness. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

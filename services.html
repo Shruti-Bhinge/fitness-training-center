@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Sneha Fitness</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container flex">
+            <div class="logo">Sneha<span>Fitness</span></div>
+            <nav>
+                <ul>
+                    <li><a href="index1.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                    <li><a href="review.html">Review</a></li>
+                    <li><a href="logout.php" class="btn" style="background-color: #ff4757;">Sign Out</a></li>
+                </ul>
+            </nav>
+            
+        </div>
+    </header>
+
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="grid">
+                <!-- In services.html, modify the card sections to add Buy buttons -->
+<div class="card">
+    <i class="fas fa-dumbbell"></i>
+    <h3>Personal Training</h3>
+    <p>Customized workout plans with certified trainers</p>
+    <h4 style="color: var(--secondary); margin-top: 15px;">₹1999/month</h4><br>
+    
+    <div style="display: flex; gap: 10px; justify-content: center;">
+        <a href="trainers.html" class="btn">Info</a>
+        <a href="payment.html?service=Personal Training&price=1999" class="btn" style="background-color: var(--secondary);">Buy Now</a>
+    </div>
+</div>
+
+<div class="card">
+    <i class="fas fa-utensils"></i>
+    <h3>Nutrition Plans</h3>
+    <p>Tailored diet plans for your fitness goals</p>
+    <h4 style="color: var(--secondary); margin-top: 15px;">₹999/month</h4><br>
+    
+    <div style="display: flex; gap: 10px; justify-content: center;">
+        <a href="Nutrition plans.html" class="btn">Info</a>
+        <a href="payment.html?service=Nutrition Plans&price=999" class="btn" style="background-color: var(--secondary);">Buy Now</a>
+    </div>
+</div>
+
+<div class="card">
+    <i class="fas fa-heartbeat"></i>
+    <h3>Yoga Classes</h3>
+    <p>Improve flexibility and mindfulness</p>
+    <h4 style="color: var(--secondary); margin-top: 15px;">₹1499/month</h4><br>
+    
+    <div style="display: flex; gap: 10px; justify-content: center;">
+        <a href="Yoga classes.html" class="btn">Info</a>
+        <a href="payment.html?service=Yoga Classes&price=1499" class="btn" style="background-color: var(--secondary);">Buy Now</a>
+    </div>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="logo">Sneha<span>Fitness</span></div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Sneha Fitness. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

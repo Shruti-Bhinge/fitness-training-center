@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Nutrition Plans | Sneha Fitness</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #6C63FF;
+            --accent: #FFD166;
+            --dark: #2D3436;
+            --light: #F8F9FA;
+            --success: #06D6A0;
+            --info: #118AB2;
+            --warning: #FFD166;
+            --danger: #EF476F;
+            --white: #FFFFFF;
+            --gray: #ADB5BD;
+            --dark-gray: #495057;
+        }
+  * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+  body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+ .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+   /* Header Styles */
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+ .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+ .page-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+  .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--dark-gray);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+     /* Content Card */
+        .content-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 3rem;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+ .content-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+        }
+  /* Section Headers */
+        .section-header {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--dark);
+            margin: 2.5rem 0 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+ .section-header::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary);
+        }
+/* Benefits Section */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+  .benefit-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 4px solid var(--secondary);
+        }
+ .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+ .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+ .benefit-title {
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark);
+        }
+  /* Nutritionist Profile */
+        .expert-profile {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.1), rgba(255, 107, 107, 0.1)));
+            padding: 2.5rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+  .expert-profile::after {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(108, 99, 255, 0.1), transparent 70%);
+            z-index: -1;
+        }
+  .expert-image {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 5px solid var(--white);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            flex-shrink: 0;
+        }
+ .expert-details {
+            flex: 1;
+        }
+ .expert-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+    .expert-title {
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            display: inline-block;
+            background-color: rgba(108, 99, 255, 0.1);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+        }
+.expert-bio {
+            margin-bottom: 1.5rem;
+            color: var(--dark-gray);
+        }
+.expert-qualifications {
+            margin-bottom: 1.5rem;
+        }
+ .qualification-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+  .qualification-icon {
+            color: var(--success);
+            margin-right: 0.8rem;
+            font-size: 1.2rem;
+        }
+ .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+ .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(108, 99, 255, 0.1);
+            color: var(--secondary);
+            transition: all 0.3s;
+        }
+  .social-link:hover {
+            background-color: var(--secondary);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+ /* Pricing Section */
+        .pricing-section {
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.03), rgba(255, 107, 107, 0.03)));
+            padding: 3rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+  .pricing-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(108, 99, 255, 0.2);
+        }
+ .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+        }
+  .price-amount {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--secondary);
+            margin: 1rem 0;
+            position: relative;
+            display: inline-block;
+        }
+  .price-amount::before {
+            content: '₹';
+            font-size: 1.5rem;
+            position: relative;
+            top: -0.8rem;
+            margin-right: 0.2rem;
+        }
+  .price-duration {
+            font-size: 1.2rem;
+            color: var(--dark-gray);
+            margin-bottom: 2rem;
+        }
+  .price-features {
+            text-align: left;
+            margin: 2rem 0;
+        }
+  .price-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+ .price-feature i {
+            color: var(--success);
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+  .cta-button {
+            display: inline-block;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 1.5rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+        }
+ .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(108, 99, 255, 0.4);
+        }
+ /* Calculator Section */
+        .calculator-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin: 4rem 0;
+        }
+.calculator-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+  .calculator-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+        }
+ .calculator-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+  .calculator-description {
+            color: var(--dark-gray);
+            margin-bottom: 1.5rem;
+        }
+ .form-group {
+            margin-bottom: 1.5rem;
+        }
+ .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark);
+        }
+   .form-input {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--gray);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+  .form-input:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+        }
+  .form-select {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--gray);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            background-color: var(--white);
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
+        }
+ .calculate-button {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: var(--white);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            margin-top: 1rem;
+        }
+  .calculate-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+ .result-container {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            border-radius: 8px;
+            background-color: rgba(108, 99, 255, 0.05);
+            border-left: 4px solid var(--secondary);
+        }
+  .result-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+  /* BMI Scale */
+        .bmi-scale {
+            margin-top: 2rem;
+        }
+  .scale-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+  .scale-range {
+            font-weight: 500;
+        }
+ .scale-category {
+            font-weight: 600;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+        }
+ .underweight { color: var(--info); background-color: rgba(17, 138, 178, 0.1); }
+        .normal { color: var(--success); background-color: rgba(6, 214, 160, 0.1); }
+        .overweight { color: var(--warning); background-color: rgba(255, 209, 102, 0.1); }
+        .obese { color: var(--danger); background-color: rgba(239, 71, 111, 0.1); }
+  /* Meal Plan Table */
+        .meal-plan-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+  .meal-plan-table th {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 1rem;
+            text-align: left;
+        }
+    .meal-plan-table td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+ .meal-plan-table tr:nth-child(even) {
+            background-color: rgba(108, 99, 255, 0.03);
+        }
+  .meal-plan-table tr:last-child td {
+            border-bottom: none;
+        }
+  /* Testimonials */
+        .testimonials-section {
+            margin: 4rem 0;
+        }
+ .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+ .testimonial-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+  .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            color: rgba(108, 99, 255, 0.1);
+            line-height: 1;
+            z-index: 0;
+        }
+  .testimonial-content {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            color: var(--dark-gray);
+        }
+   .testimonial-author {
+            font-weight: 600;
+            color: var(--dark);
+        }
+  .testimonial-meta {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-top: 0.3rem;
+        }
+  /* FAQ Section */
+        .faq-section {
+            margin: 4rem 0;
+        }
+ .faq-item {
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+  .faq-question {
+            background-color: var(--white);
+            padding: 1.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+        }
+  .faq-question:hover {
+            background-color: rgba(108, 99, 255, 0.05);
+        }
+   .faq-question i {
+            transition: transform 0.3s;
+        }
+ .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+            background-color: var(--white);
+        }
+ .faq-item.active .faq-question {
+            background-color: rgba(108, 99, 255, 0.05);
+        }
+ .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+ .faq-item.active .faq-answer {
+            padding: 1.5rem;
+            max-height: 500px;
+        }
+  /* Back Button */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 3rem;
+            transition: all 0.3s;
+        }
+  .back-button i {
+            margin-right: 0.5rem;
+            transition: transform 0.3s;
+        }
+  .back-button:hover {
+            color: var(--primary);
+        }
+   .back-button:hover i {
+            transform: translateX(-3px);
+        }
+    /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .page-title {
+                font-size: 2.8rem;
+            }
+             .expert-profile {
+                flex-direction: column;
+                text-align: center;
+            }
+            .expert-image {
+                margin-bottom: 1.5rem;
+            }
+            .calculator-container {
+                grid-template-columns: 1fr;
+            }
+        }
+@media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+             .page-title {
+                font-size: 2.2rem;
+            }
+            .content-card, .pricing-card, .calculator-card {
+                padding: 1.5rem;
+            }
+              .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+  /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+  .animate-fade {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+   .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="page-header animate-fade">
+            <h1 class="page-title">Premium Nutrition Plans</h1>
+            <p class="page-subtitle">Transform your health with science-backed nutrition plans tailored to your unique body composition, lifestyle, and goals</p>
+        </header>
+   <div class="content-card animate-fade delay-1">
+            <h2 class="section-header">Why Our Nutrition Plans Work</h2>
+            <p>At Sneha Fitness, we don't believe in one-size-fits-all diet plans. Our approach combines evidence-based nutrition science with practical, sustainable strategies that fit into your real life. Whether you want to lose fat, build muscle, improve athletic performance, or simply feel better, our plans are designed to deliver results.</p>
+              <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <h3 class="benefit-title">Personalized Approach</h3>
+                    <p>Plans customized to your genetics, metabolism, food preferences, and lifestyle factors for optimal adherence and results.</p>
+                </div>
+                  <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3 class="benefit-title">Science-Based</h3>
+                    <p>Backed by the latest nutrition research and designed by certified professionals with advanced degrees in nutrition science.</p>
+                </div>
+                    <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="benefit-title">Flexible Dieting</h3>
+                    <p>No restrictive diets - we teach you how to enjoy all foods while still reaching your goals through proper portion control.</p>
+                </div>
+                   <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3 class="benefit-title">Holistic Health</h3>
+                    <p>Focuses not just on weight but also on improving energy, digestion, sleep quality, and overall wellbeing.</p>
+                </div>
+                  <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3 class="benefit-title">Sustainable Habits</h3>
+                    <p>Teaches lifelong skills for maintaining results, not just short-term fixes that lead to yo-yo dieting.</p>
+                </div>
+                  <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="benefit-title">Progress Tracking</h3>
+                    <p>Weekly check-ins and plan adjustments based on your progress and feedback to ensure continuous improvement.</p>
+                </div>
+            </div>
+        </div>
+  <div class="content-card animate-fade delay-2">
+            <h2 class="section-header">Meet Our Chief Nutritionist</h2>
+              <div class="expert-profile">
+                <img src="https://img.freepik.com/premium-photo/female-nutritionist-her-workplace-ai-generated_154515-10966.jpg" alt="Ms. Priya Mehta" class="expert-image">
+                  <div class="expert-details">
+                    <h3 class="expert-name">Ms. Priya Mehta</h3>
+                    <span class="expert-title">Chief Nutrition Consultant</span>
+                    
+                    <p class="expert-bio">With over 8 years of clinical experience and advanced certifications in sports nutrition and metabolic disorders, Priya has helped hundreds of clients achieve transformative results through personalized nutrition strategies.</p>
+                          <div class="expert-qualifications">
+                        <div class="qualification-item">
+                            <i class="fas fa-graduation-cap qualification-icon"></i>
+                            <span>M.Sc. in Clinical Nutrition, University of Mumbai</span>
+                        </div>
+                        <div class="qualification-item">
+                            <i class="fas fa-certificate qualification-icon"></i>
+                            <span>Certified Sports Nutritionist (ISSN)</span>
+                        </div>
+                        <div class="qualification-item">
+                            <i class="fas fa-certificate qualification-icon"></i>
+                            <span>Certified Diabetes Educator (IDF)</span>
+                        </div>
+                        <div class="qualification-item">
+                            <i class="fas fa-certificate qualification-icon"></i>
+                            <span>Precision Nutrition Level 2 Coach</span>
+                        </div>
+                    </div>
+                      <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+           <h3 class="section-header">Specialized Nutrition Programs</h3>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <h4><i class="fas fa-weight-scale"></i> Weight Management</h4>
+                    <p>Customized plans for sustainable fat loss or healthy weight gain based on your metabolism and lifestyle.</p>
+                </div>
+                 <div class="program-card">
+                    <h4><i class="fas fa-dumbbell"></i> Sports Performance</h4>
+                    <p>Nutrition strategies to enhance athletic performance, endurance, and recovery.</p>
+                </div>
+                <div class="program-card">
+                    <h4><i class="fas fa-heart"></i> Metabolic Health</h4>
+                    <p>Specialized plans for diabetes, PCOS, thyroid disorders, and other metabolic conditions.</p>
+                </div>
+                 <div class="program-card">
+                    <h4><i class="fas fa-seedling"></i> Plant-Based Nutrition</h4>
+                    <p>Expert guidance for vegetarians and vegans to ensure complete nutrition.</p>
+                </div>
+            </div>
+        </div>
+<div class="pricing-section animate-fade delay-3">
+            <h2 class="section-header">Nutrition Plan Pricing</h2>
+            <p class="text-center" style="max-width: 700px; margin: 0 auto 2rem;">Choose the perfect plan for your needs with our transparent pricing and guaranteed results.</p>
+           <div class="pricing-card">
+                <div class="price-amount">1999</div>
+                <div class="price-duration">per month | Cancel anytime</div>
+                  <div class="price-features">
+                    <div class="price-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Initial 60-minute comprehensive nutrition assessment</span>
+                    </div>
+                    <div class="price-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Fully personalized meal plan with weekly variations</span>
+                    </div>
+                    <div class="price-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Macronutrient and micronutrient breakdown</span>
+                    </div>
+                    <div class="price-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Weekly 30-minute check-in consultations</span>
+                    </div>
+                    <div class="price-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Unlimited messaging support</span>
+                    </div>
+                    <div class="price-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Recipe database and meal prep guides</span>
+                    </div>
+                    <div class="price-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Progress tracking and plan adjustments</span>
+                    </div>
+                </div>
+              <a href="#" class="cta-button">Start Your Transformation Today</a>
+            </div>
+      <p style="margin-top: 2rem; color: var(--dark-gray);">* 3-month commitment recommended for optimal results. 15% discount available for 3-month prepayment.</p>
+        </div>
+<div class="calculator-container animate-fade delay-3">
+            <div class="calculator-card">
+                <h3 class="calculator-title">Personalized Nutrition Plan Generator</h3>
+                <p class="calculator-description">Get a customized nutrition plan based on your body metrics, activity level, and goals.</p>
+             <div class="form-group">
+                    <label for="userHeight" class="form-label">Height (cm)</label>
+                    <input type="number" id="userHeight" class="form-input" placeholder="e.g. 170" min="100" max="250">
+                </div>
+                <div class="form-group">
+                    <label for="userWeight" class="form-label">Weight (kg)</label>
+                    <input type="number" id="userWeight" class="form-input" placeholder="e.g. 65" min="30" max="200">
+                </div>
+                  <div class="form-group">
+                    <label for="userAge" class="form-label">Age</label>
+                    <input type="number" id="userAge" class="form-input" placeholder="e.g. 28" min="12" max="100">
+                </div>
+                 <div class="form-group">
+                    <label for="userGender" class="form-label">Gender</label>
+                    <select id="userGender" class="form-select">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                 <div class="form-group">
+                    <label for="userGoal" class="form-label">Primary Goal</label>
+                    <select id="userGoal" class="form-select">
+                        <option value="weight-loss">Weight Loss</option>
+                        <option value="muscle-gain">Muscle Gain</option>
+                        <option value="maintenance">Maintenance</option>
+                        <option value="performance">Athletic Performance</option>
+                        <option value="health">General Health Improvement</option>
+                    </select>
+                </div>
+               <div class="form-group">
+                    <label for="userActivity" class="form-label">Activity Level</label>
+                    <select id="userActivity" class="form-select">
+                        <option value="sedentary">Sedentary (little or no exercise)</option>
+                        <option value="light">Lightly Active (light exercise 1-3 days/week)</option>
+                        <option value="moderate">Moderately Active (moderate exercise 3-5 days/week)</option>
+                        <option value="active">Very Active (hard exercise 6-7 days/week)</option>
+                        <option value="extreme">Extremely Active (very hard exercise & physical job)</option>
+                    </select>
+                </div>
+               <div class="form-group">
+                    <label for="userDiet" class="form-label">Dietary Preference</label>
+                    <select id="userDiet" class="form-select">
+                        <option value="balanced">Balanced (everything in moderation)</option>
+                        <option value="vegetarian">Vegetarian</option>
+                        <option value="vegan">Vegan</option>
+                        <option value="low-carb">Low Carb</option>
+                        <option value="mediterranean">Mediterranean</option>
+                    </select>
+                </div>
+               <button class="calculate-button" onclick="generatePlan()">
+                    <i class="fas fa-calculator"></i> Generate My Plan
+                </button>
+               <div id="plan-result" class="result-container" style="display: none;">
+                    <h4 class="result-title">Your Personalized Nutrition Plan</h4>
+                    <div id="plan-details"></div>
+                </div>
+            </div>
+          <div class="calculator-card">
+                <h3 class="calculator-title">BMI & Body Composition Calculator</h3>
+                <p class="calculator-description">Calculate your BMI and get insights about your body composition and health risks.</p>
+               <div class="form-group">
+                    <label for="height" class="form-label">Height (cm)</label>
+                    <input type="number" id="height" class="form-input" placeholder="e.g. 170" min="100" max="250">
+                </div>
+              <div class="form-group">
+                    <label for="weight" class="form-label">Weight (kg)</label>
+                    <input type="number" id="weight" class="form-input" placeholder="e.g. 65" min="30" max="200">
+                </div>
+              <div class="form-group">
+                    <label for="waist" class="form-label">Waist Circumference (cm) - optional</label>
+                    <input type="number" id="waist" class="form-input" placeholder="e.g. 80" min="50" max="200">
+                </div>
+               <button class="calculate-button" onclick="calculateBMI()">
+                    <i class="fas fa-weight-scale"></i> Calculate BMI
+                </button>
+             <div id="bmi-result" class="result-container" style="display: none;">
+                    <h4 class="result-title">Your Body Composition Analysis</h4>
+                    <div id="bmi-details"></div>
+                </div>
+              <div class="bmi-scale">
+                    <h4 class="result-title" style="margin-top: 1.5rem;">BMI Classification</h4>
+                    <div class="scale-item">
+                        <span class="scale-range">Below 18.5</span>
+                        <span class="scale-category underweight">Underweight</span>
+                    </div>
+                    <div class="scale-item">
+                        <span class="scale-range">18.5 - 24.9</span>
+                        <span class="scale-category normal">Normal weight</span>
+                    </div>
+                    <div class="scale-item">
+                        <span class="scale-range">25 - 29.9</span>
+                        <span class="scale-category overweight">Overweight</span>
+                    </div>
+                    <div class="scale-item">
+                        <span class="scale-range">30 - 34.9</span>
+                        <span class="scale-category obese">Obese (Class I)</span>
+                    </div>
+                    <div class="scale-item">
+                        <span class="scale-range">35 - 39.9</span>
+                        <span class="scale-category obese">Obese (Class II)</span>
+                    </div>
+                    <div class="scale-item">
+                        <span class="scale-range">40 and above</span>
+                        <span class="scale-category obese">Obese (Class III)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+  <div class="testimonials-section animate-fade delay-4">
+            <h2 class="section-header">Success Stories</h2>
+            <p class="text-center" style="max-width: 700px; margin: 0 auto 2rem;">Don't just take our word for it - hear from people who transformed their health with our nutrition plans.</p>
+         <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "I lost 18kg in 5 months without feeling deprived. Priya taught me how to enjoy food while still losing weight. The meal plans were delicious and easy to follow even with my busy schedule."
+                    </div>
+                    <div class="testimonial-author">Rohan K.</div>
+                    <div class="testimonial-meta">34 years | Lost 18kg | 5 months</div>
+                </div>
+               <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "As a vegetarian, I struggled to gain muscle. The customized high-protein vegetarian plan helped me gain 7kg of lean mass in 6 months while improving my athletic performance."
+                    </div>
+                    <div class="testimonial-author">Ananya S.</div>
+                    <div class="testimonial-meta">27 years | Gained 7kg muscle | 6 months</div>
+                </div>
+               <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "After being diagnosed with PCOS, I was confused about what to eat. The metabolic health plan helped me regulate my cycles and lose 12kg. My energy levels have never been better!"
+                    </div>
+                    <div class="testimonial-author">Priya M.</div>
+                    <div class="testimonial-meta">29 years | PCOS Management | 8 months</div>
+                </div>
+            </div>
+        </div>
+  <div class="faq-section animate-fade delay-4">
+            <h2 class="section-header">Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>How quickly will I see results with the nutrition plan?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Most clients begin noticing positive changes in energy levels, digestion, and sleep quality within the first 2 weeks. Visible body composition changes typically become apparent after 4-6 weeks of consistent adherence to the plan. The rate of progress depends on your starting point, consistency, and how closely you follow the recommendations.</p>
+                </div>
+            </div>
+           <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Can the plan accommodate my food allergies or intolerances?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely. During your initial assessment, we thoroughly review all food allergies, intolerances, and sensitivities. Your personalized plan will exclude any problem foods while ensuring you still receive all necessary nutrients from alternative sources. We have experience working with gluten intolerance, lactose intolerance, nut allergies, and other common dietary restrictions.</p>
+                </div>
+            </div>
+             <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What if I don't have time to cook complicated meals?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We specialize in creating simple, time-efficient meal plans. Your plan will include:</p>
+                    <ul>
+                        <li>Quick 15-minute meal options</li>
+                        <li>Batch cooking strategies</li>
+                        <li>Healthy takeout alternatives</li>
+                        <li>Minimal-prep meals</li>
+                        <li>Ready-to-eat healthy snacks</li>
+                    </ul>
+                    <p>We'll work with your schedule to create a realistic plan you can stick to.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>How does this differ from free diet plans I can find online?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Our nutrition plans offer several key advantages over generic online plans:</p>
+                    <ul>
+                        <li><strong>Personalization:</strong> Tailored to your unique body, metabolism, and lifestyle</li>
+                        <li><strong>Professional oversight:</strong> Designed and monitored by certified nutrition experts</li>
+                        <li><strong>Adaptability:</strong> Adjusted weekly based on your progress and feedback</li>
+                        <li><strong>Comprehensiveness:</strong> Addresses not just what to eat but also timing, portions, and food combinations</li>
+                        <li><strong>Support:</strong> Direct access to a nutrition professional for questions and guidance</li>
+                    </ul>
+                </div>
+            </div>
+           <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Do I need to take supplements with the plan?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Our primary focus is helping you meet your nutritional needs through whole foods. However, we may recommend specific supplements if:</p>
+                    <ul>
+                        <li>You have diagnosed deficiencies (like Vitamin D or B12)</li>
+                        <li>You have increased needs due to athletic training</li>
+                        <li>Certain nutrients are difficult to obtain from your preferred diet (like omega-3s for vegans)</li>
+                    </ul>
+                    <p>Any supplement recommendations will be evidence-based and clearly explained.</p>
+                </div>
+            </div>
+        </div>
+  <a href="services.html" class="back-button animate-fade delay-4">
+            <i class="fas fa-arrow-left"></i> Back to All Services
+        </a>
+    </div>
+  <script>
+        // Toggle FAQ items
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+        }
+  // Calculate BMI with more detailed analysis
+        function calculateBMI() {
+            const height = parseFloat(document.getElementById('height').value);
+            const weight = parseFloat(document.getElementById('weight').value);
+            const waist = parseFloat(document.getElementById('waist').value) || null;
+            const resultDiv = document.getElementById('bmi-result');
+            const detailsDiv = document.getElementById('bmi-details');
+   if (!height || !weight || height <= 0 || weight <= 0) {
+                detailsDiv.innerHTML = `<p class="error">Please enter valid height and weight.</p>`;
+                resultDiv.style.display = 'block';
+                return;
+            }
+   const heightInMeters = height / 100;
+            const bmi = (weight / (heightInMeters * heightInMeters)).toFixed(1);
+              let category = '';
+            let risk = '';
+            let advice = '';
+            let colorClass = '';
+               // BMI classification
+            if (bmi < 16) {
+                category = 'Severely Underweight';
+                risk = 'High risk of nutritional deficiencies and osteoporosis';
+                advice = 'Consult with our nutritionist for a healthy weight gain plan focusing on nutrient-dense foods.';
+                colorClass = 'underweight';
+            } else if (bmi >= 16 && bmi < 18.5) {
+                category = 'Underweight';
+                risk = 'Moderate risk of nutritional deficiencies';
+                advice = 'Aim for gradual weight gain through balanced meals and strength training.';
+                colorClass = 'underweight';
+            } else if (bmi >= 18.5 && bmi < 25) {
+                category = 'Normal Weight';
+                risk = 'Low risk (healthy range)';
+                advice = 'Maintain your healthy habits with balanced nutrition and regular exercise.';
+                colorClass = 'normal';
+            } else if (bmi >= 25 && bmi < 30) {
+                category = 'Overweight';
+                risk = 'Moderate risk of developing heart disease, high blood pressure';
+                advice = 'Consider moderate calorie reduction and increased physical activity.';
+                colorClass = 'overweight';
+            } else if (bmi >= 30 && bmi < 35) {
+                category = 'Obese (Class I)';
+                risk = 'High risk of type 2 diabetes, heart disease';
+                advice = 'Structured weight loss program recommended with professional guidance.';
+                colorClass = 'obese';
+            } else if (bmi >= 35 && bmi < 40) {
+                category = 'Obese (Class II)';
+                risk = 'Very high risk of metabolic disorders';
+                advice = 'Comprehensive medical and nutritional intervention recommended.';
+                colorClass = 'obese';
+            } else {
+                category = 'Obese (Class III)';
+                risk = 'Extremely high risk of multiple health complications';
+                advice = 'Urgent professional medical and nutritional support needed.';
+                colorClass = 'obese';
+            }
+              // Waist circumference analysis if available
+            let waistAnalysis = '';
+            if (waist) {
+                let waistRisk = '';
+                const gender = document.getElementById('userGender') ? document.getElementById('userGender').value : 'male';
+                  if ((gender === 'male' && waist >= 102) || (gender === 'female' && waist >= 88)) {
+                    waistRisk = 'High risk (central obesity)';
+                } else if ((gender === 'male' && waist >= 94) || (gender === 'female' && waist >= 80)) {
+                    waistRisk = 'Increased risk';
+                } else {
+                    waistRisk = 'Low risk';
+                }
+                  waistAnalysis = `
+                    <h5>Waist Circumference Analysis</h5>
+                    <p><strong>Measurement:</strong> ${waist} cm</p>
+                    <p><strong>Risk Level:</strong> ${waistRisk}</p>
+                    <p>Waist circumference is an important indicator of abdominal fat, which is particularly harmful to health.</p>
+                `;
+            }
+               // Ideal weight range
+            const minIdealWeight = (18.5 * heightInMeters * heightInMeters).toFixed(1);
+            const maxIdealWeight = (24.9 * heightInMeters * heightInMeters).toFixed(1);
+               detailsDiv.innerHTML = `
+                <div class="bmi-result ${colorClass}">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <div>
+                            <p><strong>Your BMI:</strong> ${bmi}</p>
+                            <p><strong>Category:</strong> ${category}</p>
+                        </div>
+                        <div style="background-color: rgba(108, 99, 255, 0.1); padding: 0.5rem 1rem; border-radius: 8px;">
+                            <p><strong>Ideal Weight Range:</strong></p>
+                            <p>${minIdealWeight}kg - ${maxIdealWeight}kg</p>
+                        </div>
+                    </div>
+                    <p><strong>Health Risk:</strong> ${risk}</p>
+                    <p><strong>Recommendation:</strong> ${advice}</p>
+                    ${waistAnalysis}
+                     <div style="margin-top: 1.5rem; padding: 1rem; background-color: rgba(108, 99, 255, 0.05); border-radius: 8px;">
+                        <p><small>Note: BMI is a screening tool but doesn't account for muscle mass or fat distribution. For a complete body composition analysis, consider our advanced assessment.</small></p>
+                    </div>
+                </div>
+            `;
+             resultDiv.style.display = 'block';
+        }
+
+        // Generate comprehensive nutrition plan
+        function generatePlan() {
+            const height = parseFloat(document.getElementById('userHeight').value);
+            const weight = parseFloat(document.getElementById('userWeight').value);
+            const age = parseInt(document.getElementById('userAge').value);
+            const gender = document.getElementById('userGender').value;
+            const goal = document.getElementById('userGoal').value;
+            const activity = document.getElementById('userActivity').value;
+            const diet = document.getElementById('userDiet').value;
+           const resultDiv = document.getElementById('plan-result');
+            const detailsDiv = document.getElementById('plan-details');
+           if (!height || !weight || !age || height <= 0 || weight <= 0 || age <= 0) {
+                detailsDiv.innerHTML = `<p class="error">Please fill in all required fields with valid values.</p>`;
+                resultDiv.style.display = 'block';
+                return;
+            }
+               // Calculate BMI
+            const heightMeters = height / 100;
+            const bmi = (weight / (heightMeters * heightMeters)).toFixed(1);
+            // Calculate BMR (Mifflin-St Jeor Equation)
+            let bmr;
+            if (gender === 'male') {
+                bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+            } else {
+                bmr = 10 * weight + 6.25 * height - 5 * age - 161;
+            }
+           // Adjust for activity level
+            const activityMultipliers = {
+                sedentary: 1.2,
+                light: 1.375,
+                moderate: 1.55,
+                active: 1.725,
+                extreme: 1.9
+            };
+            const tdee = bmr * activityMultipliers[activity];
+            // Adjust calories based on goal
+            let dailyCalories, proteinPerKg, planName, goalDescription, carbPercentage, fatPercentage;
+           switch(goal) {
+                case 'weight-loss':
+                    dailyCalories = tdee * 0.85; // 15% deficit
+                    proteinPerKg = 1.8;
+                    planName = 'Weight Loss Plan';
+                    goalDescription = 'Focus on fat loss while preserving muscle mass through moderate calorie deficit and high protein intake.';
+                    carbPercentage = 0.4;
+                    fatPercentage = 0.25;
+                    break;
+                case 'muscle-gain':
+                    dailyCalories = tdee * 1.1; // 10% surplus
+                    proteinPerKg = 2.2;
+                    planName = 'Muscle Gain Plan';
+                    goalDescription = 'Support muscle growth with calorie surplus and high protein intake combined with strength training.';
+                    carbPercentage = 0.45;
+                    fatPercentage = 0.25;
+                    break;
+                case 'performance':
+                    dailyCalories = tdee * 1.15; // 15% surplus
+                    proteinPerKg = 2.0;
+                    planName = 'Performance Plan';
+                    goalDescription = 'Optimize energy for athletic performance and recovery with targeted nutrient timing.';
+                    carbPercentage = 0.5;
+                    fatPercentage = 0.25;
+                    break;
+                case 'health':
+                    dailyCalories = tdee;
+                    proteinPerKg = 1.4;
+                    planName = 'Health Optimization Plan';
+                    goalDescription = 'Improve overall health markers with balanced, nutrient-dense eating pattern.';
+                    carbPercentage = 0.45;
+                    fatPercentage = 0.3;
+                    break;
+                default: // maintenance
+                    dailyCalories = tdee;
+                    proteinPerKg = 1.6;
+                    planName = 'Maintenance Plan';
+                    goalDescription = 'Maintain current weight with balanced nutrition and healthy habits.';
+                    carbPercentage = 0.45;
+                    fatPercentage = 0.3;
+            }
+            // Adjust for dietary preference
+            let dietaryNotes = '';
+            let proteinSources = [];
+            let carbSources = [];
+            let fatSources = [];
+           switch(diet) {
+                case 'vegetarian':
+                    dietaryNotes = 'Vegetarian plan with dairy and eggs as protein sources.';
+                    proteinSources = ['Paneer', 'Tofu', 'Greek yogurt', 'Eggs', 'Lentils', 'Beans', 'Milk', 'Cheese'];
+                    carbSources = ['Whole grains', 'Fruits', 'Vegetables', 'Dairy'];
+                    fatSources = ['Nuts', 'Seeds', 'Ghee', 'Olive oil', 'Avocado'];
+                    break;
+                case 'vegan':
+                    dietaryNotes = '100% plant-based vegan plan.';
+                    proteinSources = ['Tofu', 'Tempeh', 'Lentils', 'Beans', 'Chickpeas', 'Quinoa', 'Nuts', 'Seeds'];
+                    carbSources = ['Whole grains', 'Fruits', 'Vegetables', 'Legumes'];
+                    fatSources = ['Nuts', 'Seeds', 'Avocado', 'Coconut', 'Olive oil'];
+                    break;
+                case 'low-carb':
+                    dietaryNotes = 'Lower carbohydrate plan with moderate healthy fats.';
+                    proteinSources = ['Chicken', 'Fish', 'Eggs', 'Paneer', 'Greek yogurt'];
+                    carbSources = ['Non-starchy vegetables', 'Berries', 'Nuts', 'Seeds'];
+                    fatSources = ['Avocado', 'Olive oil', 'Nuts', 'Seeds', 'Ghee'];
+                    carbPercentage = 0.3;
+                    fatPercentage = 0.4;
+                    break;
+                case 'mediterranean':
+                    dietaryNotes = 'Mediterranean-style plan rich in healthy fats and whole foods.';
+                    proteinSources = ['Fish', 'Chicken', 'Eggs', 'Legumes', 'Yogurt'];
+                    carbSources = ['Whole grains', 'Fruits', 'Vegetables', 'Legumes'];
+                    fatSources = ['Olive oil', 'Nuts', 'Seeds', 'Avocado', 'Fatty fish'];
+                    break;
+                default: // balanced
+                    dietaryNotes = 'Balanced plan with variety of protein sources.';
+                    proteinSources = ['Chicken', 'Fish', 'Eggs', 'Paneer', 'Dals', 'Beans', 'Greek yogurt'];
+                    carbSources = ['Whole grains', 'Fruits', 'Vegetables', 'Dairy'];
+                    fatSources = ['Nuts', 'Seeds', 'Ghee', 'Olive oil', 'Avocado'];
+            }
+            // Calculate macros
+            const proteinGrams = Math.round(weight * proteinPerKg);
+            const proteinCalories = proteinGrams * 4;
+            const fatCalories = dailyCalories * fatPercentage;
+            const fatGrams = Math.round(fatCalories / 9);
+            const carbCalories = dailyCalories * carbPercentage;
+            const carbGrams = Math.round(carbCalories / 4);
+            // Generate meal timing based on goals
+            let mealTiming = '';
+            if (goal === 'performance') {
+                mealTiming = `
+                    <h5>Performance Nutrition Timing</h5>
+                    <ul>
+                        <li><strong>Pre-Workout (2-3 hours before):</strong> Balanced meal with carbs, protein, and fats</li>
+                        <li><strong>Pre-Workout (30-60 min before):</strong> Quick carbs + optional caffeine</li>
+                        <li><strong>During Workout (if >60 min):</strong> Carb-electrolyte solution</li>
+                        <li><strong>Post-Workout (within 30 min):</strong> Protein + fast carbs</li>
+                        <li><strong>Recovery Meals:</strong> Balanced nutrition every 3-4 hours</li>
+                    </ul>
+                ;
+            } else if (goal === 'weight-loss') {
+                mealTiming = `
+                    <h5>Weight Loss Meal Timing</h5>
+                    <ul>
+                        <li><strong>Breakfast:</strong> High protein to start the day</li>
+                        <li><strong>Pre-Workout:</strong> Light protein + veggies</li>
+                        <li><strong>Post-Workout:</strong> Protein + veggies + modest carbs</li>
+                        <li><strong>Evening:</strong> Lighter meal with protein and fiber</li>
+                        <li><strong>Snacks:</strong> Protein or fiber-focused to control hunger</li>
+                    </ul>
+                ;
+            } else {
+                mealTiming = `
+                    <h5>Standard Meal Timing</h5>
+                    <ul>
+                        <li><strong>3-5 balanced meals per day</strong> spaced 3-4 hours apart</li>
+                        <li><strong>Include protein in every meal</strong> to support muscle maintenance</li>
+                        <li><strong>Largest meals</strong> when most active</li>
+                        <li><strong>Lightest meal</strong> in the evening</li>
+                    </ul>
+                ;
+            }
+             // Generate sample meal plan
+            let mealPlan = '';
+            let sampleMeals = [];
+             if (bmi < 18.5 && goal !== 'weight-loss') {
+                // Underweight - focus on calorie-dense foods
+                sampleMeals = [
+                    { meal: 'Breakfast', foods: 'Oats cooked in milk with banana, almond butter, and 2 boiled eggs' },
+                    { meal: 'Morning Snack', foods: 'Greek yogurt with granola and honey' },
+                    { meal: 'Lunch', foods: '1 cup rice, 1 cup dal, 100g chicken/paneer curry, salad with olive oil dressing' },
+                    { meal: 'Pre-Workout', foods: 'Fruit smoothie with protein powder and flaxseeds' },
+                    { meal: 'Dinner', foods: '2 chapati, potato curry, 100g fish/tofu, 1/2 avocado' },
+                    { meal: 'Before Bed', foods: 'Casein protein shake or 1/2 cup cottage cheese with nuts' }
+                ];
+             } else if (bmi >= 25 && goal === 'weight-loss') {
+                // Overweight - focus on high protein, high fiber
+                sampleMeals = [
+                    { meal: 'Breakfast', foods: 'Vegetable omelet (3 eggs) with spinach and 1 slice whole grain toast' },
+                    { meal: 'Morning Snack', foods: 'Protein shake with 1 tbsp flaxseeds' },
+                    { meal: 'Lunch', foods: '120g grilled chicken/fish with 3/4 cup quinoa and roasted vegetables' },
+                    { meal: 'Afternoon Snack', foods: 'Cucumber slices with 2 tbsp hummus' },
+                    { meal: 'Dinner', foods: '1 bowl lentil soup with mixed vegetables and 1/2 cup brown rice' },
+                    { meal: 'Evening', foods: 'Handful of almonds or walnuts (about 10-12 pieces)' }
+                ];
+            } else {
+                // Balanced approach
+                sampleMeals = [
+                    { meal: 'Breakfast', foods: 'Scrambled eggs with spinach and 1 slice whole grain toast' },
+                    { meal: 'Morning Snack', foods: '1 medium apple with 1 tbsp peanut butter' },
+                    { meal: 'Lunch', foods: '3/4 cup brown rice, 1 cup dal, 100g grilled chicken/paneer, mixed salad' },
+                    { meal: 'Pre-Workout', foods: '1 banana with handful of almonds (about 10 pieces)' },
+                    { meal: 'Dinner', foods: '120g grilled fish/tofu with 1 small sweet potato and steamed broccoli' },
+                    { meal: 'Before Bed', foods: '1/2 cup cottage cheese or casein protein shake' }
+                ];
+            }
+            
+            // Adjust for dietary preferences
+            if (diet === 'vegetarian') {
+                sampleMeals = sampleMeals.map(meal => {
+                    return {
+                        meal: meal.meal,
+                        foods: meal.foods
+                            .replace(/chicken/g, 'paneer')
+                            .replace(/fish/g, 'tofu')
+                            .replace(/eggs/g, 'egg whites (or tofu for vegan)')
+                    };
+                });
+            } else if (diet === 'vegan') {
+                sampleMeals = sampleMeals.map(meal => {
+                    return {
+                        meal: meal.meal,
+                        foods: meal.foods
+                            .replace(/chicken|fish|eggs|greek yogurt|cottage cheese|casein protein/g, 'tofu/tempeh')
+                            .replace(/milk/g, 'plant milk')
+                    };
+                });
+            }
+           // Generate meal plan table
+            mealPlan = '<h5>Sample Daily Meal Plan</h5><table class="meal-plan-table"><tr><th>Meal</th><th>Foods</th></tr>';
+            sampleMeals.forEach(item => {
+                mealPlan += `<tr><td>${item.meal}</td><td>${item.foods}</td></tr>`;
+            });
+            mealPlan += '</table>';
+           // Hydration recommendations
+            const waterIntake = Math.round(weight * 0.033); // liters per day
+            let hydration = `
+                <h5>Hydration Plan</h5>
+                <p><strong>Daily Water Intake:</strong> ${waterIntake} liters (about ${waterIntake * 4} cups)</p>
+                <ul>
+                    <li>Start your day with 1 glass warm water</li>
+                    <li>Drink 1 glass water 30 minutes before each meal</li>
+                    <li>Limit fluids during meals to aid digestion</li>
+                    <li>Add electrolytes during intense workouts</li>
+                    <li>Monitor urine color (aim for pale yellow)</li>
+                </ul>
+            ;
+             // Supplement suggestions
+            let supplements = '';
+            if (goal === 'muscle-gain') {
+                supplements = `
+                    <h5>Supplement Suggestions</h5>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                        <div style="background-color: rgba(108, 99, 255, 0.05); padding: 1rem; border-radius: 8px;">
+                            <h6 style="margin-bottom: 0.5rem;">Whey Protein</h6>
+                            <p style="font-size: 0.9rem;">20-40g post-workout to support muscle recovery</p>
+                        </div>
+                        <div style="background-color: rgba(108, 99, 255, 0.05); padding: 1rem; border-radius: 8px;">
+                            <h6 style="margin-bottom: 0.5rem;">Creatine Monohydrate</h6>
+                            <p style="font-size: 0.9rem;">5g daily to improve strength and power output</p>
+                        </div>
+                        <div style="background-color: rgba(108, 99, 255, 0.05); padding: 1rem; border-radius: 8px;">
+                            <h6 style="margin-bottom: 0.5rem;">Omega-3 Fish Oil</h6>
+                            <p style="font-size: 0.9rem;">1-2g daily to reduce inflammation</p>
+                        </div>
+                    </div>
+                `;
+            } else if (goal === 'weight-loss') {
+                supplements = `
+                    <h5>Supplement Suggestions</h5>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                        <div style="background-color: rgba(108, 99, 255, 0.05); padding: 1rem; border-radius: 8px;">
+                            <h6 style="margin-bottom: 0.5rem;">Protein Powder</h6>
+                            <p style="font-size: 0.9rem;">For convenient protein intake between meals</p>
+                        </div>
+                        <div style="background-color: rgba(108, 99, 255, 0.05); padding: 1rem; border-radius: 8px;">
+                            <h6 style="margin-bottom: 0.5rem;">Green Tea Extract</h6>
+                            <p style="font-size: 0.9rem;">May support fat metabolism</p>
+                        </div>
+                        <div style="background-color: rgba(108, 99, 255, 0.05); padding: 1rem; border-radius: 8px;">
+                            <h6 style="margin-bottom: 0.5rem;">Multivitamin</h6>
+                            <p style="font-size: 0.9rem;">To ensure micronutrient needs are met</p>
+                        </div>
+                    </div>
+                `;
+            }
+            // Generate the full plan
+            detailsDiv.innerHTML = `
+                <div class="plan-header" style="margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
+                    <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">${planName}</h4>
+                    <p>${goalDescription}</p>
+                    <p><strong>Dietary Preference:</strong> ${diet.charAt(0).toUpperCase() + diet.slice(1)} | ${dietaryNotes}</p>
+                </div>
+                  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                    <div style="background-color: rgba(108, 99, 255, 0.05); padding: 1.5rem; border-radius: 8px;">
+                        <h5 style="margin-bottom: 0.5rem; color: var(--secondary);">Your Metrics</h5>
+                        <p><strong>BMI:</strong> ${bmi}</p>
+                        <p><strong>BMR:</strong> ${Math.round(bmr)} kcal/day</p>
+                        <p><strong>TDEE:</strong> ${Math.round(tdee)} kcal/day</p>
+                    </div>
+                     <div style="background-color: rgba(108, 99, 255, 0.05); padding: 1.5rem; border-radius: 8px;">
+                        <h5 style="margin-bottom: 0.5rem; color: var(--secondary);">Daily Targets</h5>
+                        <p><strong>Calories:</strong> ${Math.round(dailyCalories)} kcal</p>
+                        <p><strong>Protein:</strong> ${proteinGrams}g (${Math.round(proteinCalories)} kcal)</p>
+                        <p><strong>Carbs:</strong> ${carbGrams}g (${Math.round(carbCalories)} kcal)</p>
+                        <p><strong>Fats:</strong> ${fatGrams}g (${Math.round(fatCalories)} kcal)</p>
+                    </div>
+                   <div style="background-color: rgba(108, 99, 255, 0.05); padding: 1.5rem; border-radius: 8px;">
+                        <h5 style="margin-bottom: 0.5rem; color: var(--secondary);">Food Sources</h5>
+                        <p><strong>Proteins:</strong> ${proteinSources.slice(0, 4).join(', ')}</p>
+                        <p><strong>Carbs:</strong> ${carbSources.slice(0, 3).join(', ')}</p>
+                        <p><strong>Fats:</strong> ${fatSources.slice(0, 3).join(', ')}</p>
+                    </div>
+                </div>
+                ${mealTiming}
+                ${mealPlan}
+               ${hydration}
+               ${supplements}
+                  <div style="margin-top: 2rem; padding: 1rem; background-color: rgba(108, 99, 255, 0.05); border-radius: 8px;">
+                    <p><small><strong>Note:</strong> This is a sample plan generated based on your inputs. For a fully customized plan with detailed recipes, portion sizes, and weekly adjustments, please consult with our nutritionist. Individual needs may vary based on medical history, activity patterns, and other factors.</small></p>
+                </div>
+            `;
+             resultDiv.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Personal Training | Sneha Fitness</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #6C63FF;
+            --accent: #FFD166;
+            --dark: #2D3436;
+            --light: #F8F9FA;
+            --success: #06D6A0;
+            --info: #118AB2;
+            --warning: #FFD166;
+            --danger: #EF476F;
+            --white: #FFFFFF;
+            --gray: #ADB5BD;
+            --dark-gray: #495057;
+        }
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+   body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+  .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+  /* Header Styles */
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+  .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+  .page-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+   .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--dark-gray);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+  /* Content Card */
+        .content-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 3rem;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+  .content-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+        }
+    /* Section Headers */
+        .section-header {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--dark);
+            margin: 2.5rem 0 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+ .section-header::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary);
+        }
+ /* Benefits Section */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+ .benefit-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 4px solid var(--secondary);
+        }
+ .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+ .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+  .benefit-title {
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark);
+        }
+ /* Pricing Section */
+        .pricing-section {
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.03), rgba(255, 107, 107, 0.03));
+            padding: 3rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+  .pricing-tiers {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+  .pricing-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            width: 350px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(108, 99, 255, 0.1);
+            transition: transform 0.3s;
+        }
+ .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+ .pricing-card.popular {
+            border: 2px solid var(--secondary);
+            transform: scale(1.05);
+        }
+ .pricing-card.popular::after {
+            content: 'Most Popular';
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: var(--secondary);
+            color: white;
+            padding: 0.3rem 2rem;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+ .pricing-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+ .price-amount {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--secondary);
+            margin: 1rem 0;
+            position: relative;
+        }
+  .price-amount::before {
+            content: '₹';
+            font-size: 1.5rem;
+            position: relative;
+            top: -0.8rem;
+            margin-right: 0.2rem;
+        }
+.price-duration {
+            font-size: 1rem;
+            color: var(--dark-gray);
+            margin-bottom: 2rem;
+        }
+ .price-features {
+            text-align: left;
+            margin: 2rem 0;
+        }
+ .price-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+  .price-feature i {
+            color: var(--success);
+            margin-right: 1rem;
+            font-size: 1.1rem;
+        }
+.cta-button {
+            display: inline-block;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 1.5rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+            width: 100%;
+            text-align: center;
+        }
+  .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(108, 99, 255, 0.4);
+        }
+/* Trainers Section */
+        .trainers-section {
+            margin: 4rem 0;
+        }
+
+        .trainers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+ .trainer-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+            position: relative;
+        }
+  .trainer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+  .trainer-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+  .trainer-details {
+            padding: 1.5rem;
+        }
+ .trainer-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+  .trainer-specialty {
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 0.8rem;
+            display: inline-block;
+            background-color: rgba(108, 99, 255, 0.1);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+        }
+   .trainer-bio {
+            color: var(--dark-gray);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+  .trainer-expertise {
+            margin-top: 1rem;
+        }
+   .expertise-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+   .expertise-item i {
+            color: var(--success);
+            margin-right: 0.5rem;
+            font-size: 0.8rem;
+        }
+   .trainer-social {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+        }
+  .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: rgba(108, 99, 255, 0.1);
+            color: var(--secondary);
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+ .social-link:hover {
+            background-color: var(--secondary);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+  /* Training Approach */
+        .approach-section {
+            margin: 4rem 0;
+        }
+  .approach-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+ .approach-step {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            counter-increment: step-counter;
+        }
+ .approach-step::before {
+            content: counter(step-counter);
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+  .step-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            font-size: 1.2rem;
+        }
+  /* Testimonials */
+        .testimonials-section {
+            margin: 4rem 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            color: rgba(108, 99, 255, 0.1);
+            line-height: 1;
+            z-index: 0;
+        }
+
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            color: var(--dark-gray);
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .testimonial-meta {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-top: 0.3rem;
+        }
+
+        .testimonial-progress {
+            display: flex;
+            align-items: center;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .progress-label {
+            margin-right: 1rem;
+            color: var(--dark-gray);
+        }
+
+        .progress-bar {
+            flex-grow: 1;
+            height: 8px;
+            background-color: rgba(108, 99, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+ .progress-fill {
+            height: 100%;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 4px;
+        }
+ /* FAQ Section */
+        .faq-section {
+            margin: 4rem 0;
+        }
+ .faq-item {
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+.faq-question {
+            background-color: var(--white);
+            padding: 1.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+        }
+ .faq-question:hover {
+            background-color: rgba(108, 99, 255, 0.05);
+        }
+.faq-question i {
+            transition: transform 0.3s;
+        }
+ .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+            background-color: var(--white);
+        }
+  .faq-item.active .faq-question {
+            background-color: rgba(108, 99, 255, 0.05);
+        }
+  .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+  .faq-item.active .faq-answer {
+            padding: 1.5rem;
+            max-height: 500px;
+        }
+ /* Back Button */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 3rem;
+            transition: all 0.3s;
+        }
+  .back-button i {
+            margin-right: 0.5rem;
+            transition: transform 0.3s;
+        }
+ .back-button:hover {
+            color: var(--primary);
+        }
+.back-button:hover i {
+            transform: translateX(-3px);
+        }
+   /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .page-title {
+                font-size: 2.8rem;
+            }
+            
+            .pricing-tiers {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .pricing-card.popular {
+                transform: none;
+            }
+        }
+  @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+            .page-title {
+                font-size: 2.2rem;
+            }
+             .content-card, .pricing-section {
+                padding: 1.5rem;
+            }
+        }
+  /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+ .animate-fade {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+ .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="page-header animate-fade">
+            <h1 class="page-title">Premium Personal Training</h1>
+            <p class="page-subtitle">Transform your body with customized 1-on-1 coaching from our expert trainers, designed specifically for your goals and fitness level</p>
+        </header>
+<div class="content-card animate-fade delay-1">
+            <h2 class="section-header">Why Personal Training?</h2>
+            <p>At Sneha Fitness, our personal training program goes beyond generic workouts. We provide scientifically-designed, personalized training plans that deliver faster, safer, and more sustainable results than going it alone. Whether you're new to fitness or an experienced athlete, our trainers will help you break through plateaus and achieve what you couldn't on your own.</p>
+  <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 class="benefit-title">100% Personalized</h3>
+                    <p>Workouts tailored to your body type, fitness level, injuries, and specific goals with constant adjustments for optimal progress.</p>
+                </div>
+                  <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="benefit-title">Faster Results</h3>
+                    <p>Our clients see 3x better results compared to self-training thanks to expert programming and accountability.</p>
+                </div>
+                 <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="benefit-title">Injury Prevention</h3>
+                    <p>Proper form coaching and movement screening to train safely and fix imbalances before they cause problems.</p>
+                </div>
+                    <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="benefit-title">Time Efficiency</h3>
+                    <p>Maximize results in minimal time with science-backed training methods that deliver more in 45 minutes than hours of random exercise.</p>
+                </div>
+                 <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="benefit-title">Mindset Coaching</h3>
+                    <p>Develop the mental toughness and habits needed for lifelong fitness success beyond just physical training.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3 class="benefit-title">Holistic Approach</h3>
+                    <p>Integration with nutrition, recovery, and lifestyle factors for comprehensive transformation.</p>
+                </div>
+            </div>
+        </div>
+<div class="pricing-section animate-fade delay-2">
+            <h2 class="section-header">Training Packages</h2>
+            <p class="text-center" style="max-width: 700px; margin: 0 auto 2rem;">Choose the perfect package for your goals and budget. All packages include complimentary fitness assessment.</p>
+           <div class="pricing-tiers">
+                <div class="pricing-card">
+                    <h3 class="pricing-title">Starter Package</h3>
+                    <div class="price-amount">1999</div>
+                    <div class="price-duration">per month</div>
+                    
+                    <div class="price-features">
+                        <div class="price-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>4 sessions per month</span>
+                        </div>
+                        <div class="price-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Basic workout plan</span>
+                        </div>
+                        <div class="price-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Email support</span>
+                        </div>
+                        <div class="price-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Progress tracking</span>
+                        </div>
+                    </div>
+                   <a href="#" class="cta-button">Get Started</a>
+                </div>
+                <div class="pricing-card popular">
+                    <h3 class="pricing-title">Transform Package</h3>
+                    <div class="price-amount">3499</div>
+                    <div class="price-duration">per month</div>
+                     <div class="price-features">
+                        <div class="price-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>8 sessions per month</span>
+                        </div>
+                        <div class="price-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Customized workout plan</span>
+                        </div>
+                        <div class="price-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Priority scheduling</span>
+                        </div>
+                        <div class="price-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Nutrition guidance</span>
+                        </div>
+                        <div class="price-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>WhatsApp support</span>
+                        </div>
+                        <div class="price-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Body composition analysis</span>
+                        </div>
+                    </div>
+                   <a href="#" class="cta-button">Start Transformation</a>
+                </div>
+                  <div class="pricing-card">
+                    <h3 class="pricing-title">Elite Package</h3>
+                    <div class="price-amount">5999</div>
+                    <div class="price-duration">per month</div>
+                    <div class="price-features">
+                        <div class="price-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>12 sessions per month</span>
+                        </div>
+                        <div class="price-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Fully personalized program</span>
+                        </div>
+                        <div class="price-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>24/7 trainer access</span>
+                        </div>
+                        <div class="price-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Custom nutrition plan</span>
+                        </div>
+                        <div class="price-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Recovery protocols</span>
+                        </div>
+                        <div class="price-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Bi-weekly progress assessments</span>
+                        </div>
+                    </div>
+                   <a href="#" class="cta-button">Go Elite</a>
+                </div>
+            </div>
+          <p style="margin-top: 2rem; color: var(--dark-gray);">* All packages require 3-month minimum commitment for optimal results. 10% discount available for 6-month prepayment.</p>
+        </div>
+<div class="trainers-section animate-fade delay-2">
+            <h2 class="section-header">Meet Our Expert Trainers</h2>
+            <p class="text-center" style="max-width: 700px; margin: 0 auto 2rem;">Our certified trainers combine scientific knowledge with practical experience to deliver exceptional results.</p>
+          <div class="trainers-grid">
+                <div class="trainer-card">
+                    <img src="https://media.istockphoto.com/id/1459398604/photo/gym-fitness-and-portrait-of-proud-man-standing-with-smile-motivation-health-and-energy-for.jpg?s=612x612&w=0&k=20&c=uuPu_IkCxq1TlVwpHf3I9kjkBj_y_IY4ovXiqcmXIlc=" alt="Rahul Verma" class="trainer-image">
+                    <div class="trainer-details">
+                        <h3 class="trainer-name">Rahul Verma</h3>
+                        <span class="trainer-specialty">Weight Loss Specialist</span>
+                        <p class="trainer-bio">Helping clients shed fat sustainably while preserving muscle through metabolic conditioning and nutrition strategies.</p>
+                    <div class="trainer-expertise">
+                            <div class="expertise-item">
+                                <i class="fas fa-check"></i>
+                                <span>ACE Certified Personal Trainer</span>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-check"></i>
+                                <span>Precision Nutrition Certified</span>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-check"></i>
+                                <span>7+ Years Experience</span>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-check"></i>
+                                <span>300+ Client Transformations</span>
+                            </div>
+                        </div>
+                         <div class="trainer-social">
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="trainer-card">
+                    <img src="https://t3.ftcdn.net/jpg/06/35/17/52/360_F_635175286_Ve3RnNYKcHmWsHRNNhoWq4c38pLpZapu.jpg" alt="Priya Desai" class="trainer-image">
+                    <div class="trainer-details">
+                        <h3 class="trainer-name">Priya Desai</h3>
+                        <span class="trainer-specialty">Women's Fitness Expert</span>
+                        <p class="trainer-bio">Specializing in strength training for women, addressing PCOS, hormonal balance, and postpartum fitness.</p>
+                         <div class="trainer-expertise">
+                            <div class="expertise-item">
+                                <i class="fas fa-check"></i>
+                                <span>NASM Certified Trainer</span>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-check"></i>
+                                <span>Pre/Postnatal Certified</span>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-check"></i>
+                                <span>5+ Years Experience</span>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-check"></i>
+                                <span>PCOS Fitness Specialist</span>
+                            </div>
+                        </div>
+                       <div class="trainer-social">
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+               <div class="trainer-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBMNqo4_y6LePFLs6TeEnCPtmqYXrJ-Bjtb2K0sB3g4jRtJiJOLaKk0y1uJ7xls-LdAHI&usqp=CAU" alt="Sameer Shah" class="trainer-image">
+                    <div class="trainer-details">
+                        <h3 class="trainer-name">Sameer Shah</h3>
+                        <span class="trainer-specialty">HIIT & Cardio Coach</span>
+                        <p class="trainer-bio">Expert in high-intensity training for fat loss, endurance building, and cardiovascular health.</p>
+                         <div class="trainer-expertise">
+                            <div class="expertise-item">
+                                <i class="fas fa-check"></i>
+                                <span>ACE Certified Trainer</span>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-check"></i>
+                                <span>Certified HIIT Specialist</span>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-check"></i>
+                                <span>6+ Years Experience</span>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-check"></i>
+                                <span>Marathon Coach</span>
+                            </div>
+                        </div>
+                        
+                        <div class="trainer-social">
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="trainer-card">
+                    <img src="https://www.shutterstock.com/image-photo/portrait-female-personal-trainer-holding-260nw-2249557387.jpg" alt="Neha Kulkarni" class="trainer-image">
+                    <div class="trainer-details">
+                        <h3 class="trainer-name">Neha Kulkarni</h3>
+                        <span class="trainer-specialty">Posture & Mobility Specialist</span>
+                        <p class="trainer-bio">Correcting postural imbalances, increasing flexibility, and enhancing functional movement patterns.</p>
+                         <div class="trainer-expertise">
+                            <div class="expertise-item">
+                                <i class="fas fa-check"></i>
+                                <span>NASM Corrective Exercise Specialist</span>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-check"></i>
+                                <span>Yoga Alliance Certified</span>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-check"></i>
+                                <span>4+ Years Experience</span>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-check"></i>
+                                <span>Functional Movement Screen Certified</span>
+                            </div>
+                        </div>
+                       <div class="trainer-social">
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="trainer-card">
+                    <img src="https://img.freepik.com/premium-photo/handsome-senior-male-trainer-with-arms-crossed-standing-fitness-center_236854-26862.jpg" alt="Rajesh Patil" class="trainer-image">
+                    <div class="trainer-details">
+                        <h3 class="trainer-name">Rajesh Patil</h3>
+                        <span class="trainer-specialty">Senior Fitness Expert</span>
+                        <p class="trainer-bio">Specialized training for adults 50+ focusing on mobility, strength, and injury prevention.</p>
+                    <div class="trainer-expertise">
+                            <div class="expertise-item">
+                                <i class="fas fa-check"></i>
+                                <span>ACE Senior Fitness Specialist</span>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-check"></i>
+                                <span>Physical Therapy Assistant</span>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-check"></i>
+                                <span>8+ Years Experience</span>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-check"></i>
+                                <span>Fall Prevention Certified</span>
+                            </div>
+                        </div>
+                        <div class="trainer-social">
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+               <div class="trainer-card">
+                    <img src="https://cbx-prod.b-cdn.net/COLOURBOX64920696.jpg?width=800&height=800&quality=70" alt="Vikram Joshi" class="trainer-image">
+                    <div class="trainer-details">
+                        <h3 class="trainer-name">Vikram Joshi</h3>
+                        <span class="trainer-specialty">Body Transformation Coach</span>
+                        <p class="trainer-bio">Helping clients achieve dramatic physique transformations through strategic programming.</p>
+                        <div class="trainer-expertise">
+                            <div class="expertise-item">
+                                <i class="fas fa-check"></i>
+                                <span>ISSA Certified Trainer</span>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-check"></i>
+                                <span>Bodybuilding Specialist</span>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-check"></i>
+                                <span>10+ Years Experience</span>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-check"></i>
+                                <span>Celebrity Trainer</span>
+                            </div>
+                        </div>
+                          <div class="trainer-social">
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+ <div class="approach-section animate-fade delay-3">
+            <h2 class="section-header">Our 5-Step Training Approach</h2>
+            <p class="text-center" style="max-width: 700px; margin: 0 auto 2rem;">We follow a proven methodology to ensure you get results safely and efficiently.</p>
+            <div class="approach-steps">
+                <div class="approach-step">
+                    <h4 class="step-title">1. Comprehensive Assessment</h4>
+                    <p>We begin with a detailed evaluation of your movement patterns, fitness level, injury history, and goals using advanced screening tools.</p>
+                </div>
+                  <div class="approach-step">
+                    <h4 class="step-title">2. Custom Program Design</h4>
+                    <p>Your trainer creates a personalized workout plan based on assessment results, focusing on your specific needs and preferences.</p>
+                </div>
+               <div class="approach-step">
+                    <h4 class="step-title">3. Technique Mastery</h4>
+                    <p>We prioritize proper form and movement quality to maximize results while minimizing injury risk.</p>
+                </div>
+                  <div class="approach-step">
+                    <h4 class="step-title">4. Progressive Overload</h4>
+                    <p>Your program evolves as you get stronger, with strategic increases in intensity to ensure continuous progress.</p>
+                </div>
+               <div class="approach-step">
+                    <h4 class="step-title">5. Lifestyle Integration</h4>
+                    <p>We help you develop sustainable habits that support your fitness goals beyond the gym sessions.</p>
+                </div>
+            </div>
+        </div>
+ <div class="testimonials-section animate-fade delay-3">
+            <h2 class="section-header">Client Transformations</h2>
+            <p class="text-center" style="max-width: 700px; margin: 0 auto 2rem;">Don't just take our word for it - see what our clients have achieved with personal training.</p>
+              <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "I lost 22kg in 6 months with Rahul's guidance. His metabolic conditioning workouts combined with nutrition advice helped me achieve what I couldn't in years of trying on my own."
+                    </div>
+                    <div class="testimonial-author">Amit S.</div>
+                    <div class="testimonial-meta">42 years | Weight Loss | 6 months</div>
+                    <div class="testimonial-progress">
+                        <span class="progress-label">Progress:</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "Priya's strength training program completely transformed my body and helped manage my PCOS symptoms. I've never felt stronger or more confident!"
+                    </div>
+                    <div class="testimonial-author">Ananya R.</div>
+                    <div class="testimonial-meta">28 years | Strength Training | 8 months</div>
+                    <div class="testimonial-progress">
+                        <span class="progress-label">Progress:</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                </div>
+                  <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "At 58, I thought my best years were behind me. Rajesh's senior fitness program helped me regain mobility, lose 12kg, and even start hiking again!"
+                    </div>
+                    <div class="testimonial-author">Harish P.</div>
+                    <div class="testimonial-meta">58 years | Senior Fitness | 1 year</div>
+                    <div class="testimonial-progress">
+                        <span class="progress-label">Progress:</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+ <div class="faq-section animate-fade delay-4">
+            <h2 class="section-header">Frequently Asked Questions</h2>
+             <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>How is personal training different from group classes?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Personal training offers several key advantages:</p>
+                    <ul>
+                        <li><strong>100% individualized attention</strong> - the workout is designed specifically for your body and goals</li>
+                        <li><strong>Customized programming</strong> - exercises selected based on your abilities, limitations, and preferences</li>
+                        <li><strong>Real-time form correction</strong> - immediate feedback to prevent injury and maximize effectiveness</li>
+                        <li><strong>Personalized progress tracking</strong> - adjustments made based on your unique response to training</li>
+                        <li><strong>Accountability and motivation</strong> - dedicated coach keeping you on track</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>How often should I train with a personal trainer?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>The ideal frequency depends on your goals, experience level, and budget:</p>
+                    <ul>
+                        <li><strong>Beginners:</strong> 2-3 sessions per week to learn proper form and build foundational strength</li>
+                        <li><strong>Intermediate:</strong> 1-2 sessions per week with homework workouts</li>
+                        <li><strong>Advanced:</strong> 1 session per week for program updates and technique refinement</li>
+                        <li><strong>Special goals:</strong> 3-5 sessions per week for competition prep or rehabilitation</li>
+                    </ul>
+                    <p>Most clients see best results with our Transform Package (8 sessions/month).</p>
+                </div>
+            </div>
+             <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What should I expect in my first session?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Your first session includes:</p>
+                    <ol>
+                        <li><strong>Comprehensive assessment:</strong> Movement screening, posture analysis, and baseline measurements</li>
+                        <li><strong>Goal setting:</strong> Detailed discussion about your objectives, timeline, and preferences</li>
+                        <li><strong>Initial workout:</strong> Light introductory session to evaluate your current fitness level</li>
+                        <li><strong>Program outline:</strong> Overview of your customized training approach</li>
+                        <li><strong>Q&A:</strong> Opportunity to address any concerns and ask questions</li>
+                    </ol>
+                    <p>Come dressed for exercise and be prepared to discuss your health history.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Can personal training help with injury rehabilitation?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, our trainers work closely with physical therapists and doctors to create safe, effective programs for clients recovering from injuries. Benefits include:</p>
+                    <ul>
+                        <li>Targeted exercises to restore strength and mobility</li>
+                        <li>Movement correction to prevent re-injury</li>
+                        <li>Gradual progression back to full activity</li>
+                        <li>Pain management strategies</li>
+                        <li>Improved body mechanics</li>
+                    </ul>
+                    <p>Note: We require medical clearance for post-rehab training.</p>
+                </div>
+            </div>
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>How quickly will I see results?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Results vary based on your starting point, consistency, and program adherence, but typical timelines are:</p>
+                    <ul>
+                        <li><strong>2-4 weeks:</strong> Improved energy, better sleep, increased stamina</li>
+                        <li><strong>4-8 weeks:</strong> Noticeable changes in strength and body composition</li>
+                        <li><strong>3-6 months:</strong> Significant transformation visible to others</li>
+                        <li><strong>6-12 months:</strong> Complete lifestyle change and habit formation</li>
+                    </ul>
+                    <p>Most clients report feeling differences within the first few sessions and seeing visible changes within 6-8 weeks.</p>
+                </div>
+            </div>
+        </a>
+    <a href="services.html" class="back-button animate-fade delay-4">
+            <i class="fas fa-arrow-left"></i> Back to All Services
+        </a>
+</div>
+  <script>
+        // Toggle FAQ items
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+        }
+ // Simple animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateElements = document.querySelectorAll('.animate-fade');
+               const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+             animateElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>

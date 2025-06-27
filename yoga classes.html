@@ -1,0 +1,1135 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Yoga Classes | Sneha Fitness</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #FF6B6B;
+      --secondary: #6C63FF;
+      --accent: #FFD166;
+      --dark: #2D3436;
+      --light: #F8F9FA;
+      --success: #06D6A0;
+      --info: #118AB2;
+      --warning: #FFD166;
+      --danger: #EF476F;
+      --white: #FFFFFF;
+      --gray: #ADB5BD;
+      --dark-gray: #495057;
+}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+}
+  body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.7;
+      color: var(--dark);
+      background-color: var(--light);
+      overflow-x: hidden;
+}
+  .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem;
+}
+  /* Header Styles */
+    .page-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+}
+  .page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 1rem;
+      background: linear-gradient(90deg, var(--secondary), var(--primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: relative;
+      display: inline-block;
+    }
+ .page-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150px;
+      height: 4px;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      border-radius: 2px;
+    }
+ .page-subtitle {
+      font-size: 1.2rem;
+      color: var(--dark-gray);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+ /* Content Card */
+    .content-card {
+      background-color: var(--white);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      padding: 3rem;
+      margin-bottom: 3rem;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+}
+   .content-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+}
+   /* Section Headers */
+    .section-header {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--dark);
+      margin: 2.5rem 0 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+ .section-header::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--secondary);
+    }
+   /* Benefits Section */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+}
+   .benefit-card {
+      background-color: var(--white);
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+      border-left: 4px solid var(--secondary);
+    }
+   .benefit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+ .benefit-icon {
+      font-size: 2.5rem;
+      color: var(--secondary);
+      margin-bottom: 1rem;
+    }
+  .benefit-title {
+      font-weight: 600;
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+      color: var(--dark);
+    }
+   /* Yoga Styles */
+    .styles-section {
+      margin: 4rem 0;
+    }
+   .styles-tabs {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+   .style-tab {
+      padding: 0.8rem 1.5rem;
+      background-color: var(--white);
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s;
+      border: 1px solid var(--gray);
+    }
+  .style-tab.active {
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      color: white;
+      border-color: transparent;
+    }
+  .style-content {
+      display: none;
+      background-color: var(--white);
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+  .style-content.active {
+      display: block;
+      animation: fadeIn 0.5s ease-out;
+    }
+  .style-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+ .style-icon {
+      font-size: 2rem;
+      margin-right: 1rem;
+      color: var(--secondary);
+    }
+  .style-details {
+      flex: 1;
+    }
+ .style-benefits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+}
+ .style-benefit {
+      display: flex;
+      align-items: center;
+      padding: 0.8rem;
+      background-color: rgba(108, 99, 255, 0.05);
+      border-radius: 8px;
+}
+   .style-benefit i {
+      color: var(--success);
+      margin-right: 0.8rem;
+    }
+  /* Pricing Section */
+    .pricing-section {
+      background: linear-gradient(135deg, rgba(108, 99, 255, 0.03), rgba(255, 107, 107, 0.03));
+      padding: 3rem;
+      border-radius: 15px;
+      margin: 3rem 0;
+      text-align: center;
+    }
+  .pricing-card {
+      background-color: var(--white);
+      border-radius: 15px;
+      padding: 3rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      border: 1px solid rgba(108, 99, 255, 0.2);
+    }
+ .pricing-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+    }
+ .price-amount {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      color: var(--secondary);
+      margin: 1rem 0;
+      position: relative;
+      display: inline-block;
+    }
+
+    .price-amount::before {
+      content: '₹';
+      font-size: 1.5rem;
+      position: relative;
+      top: -0.8rem;
+      margin-right: 0.2rem;
+    }
+  .price-duration {
+      font-size: 1.2rem;
+      color: var(--dark-gray);
+      margin-bottom: 2rem;
+}
+  .price-features {
+      text-align: left;
+      margin: 2rem 0;
+    }
+  .price-feature {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+.price-feature i {
+      color: var(--success);
+      margin-right: 1rem;
+      font-size: 1.2rem;
+    }
+ .cta-button {
+      display: inline-block;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      color: var(--white);
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: 1.5rem;
+      transition: all 0.3s;
+      box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+}
+  .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(108, 99, 255, 0.4);
+}
+   /* Schedule Section */
+    .schedule-section {
+      margin: 4rem 0;
+}
+   .schedule-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+ .schedule-card {
+      background-color: var(--white);
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      position: relative;
+      border-top: 5px solid var(--secondary);
+    }
+
+    .schedule-day {
+      font-weight: 600;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: var(--secondary);
+    }
+ .schedule-session {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+  .session-time {
+      font-weight: 500;
+}
+   .session-style {
+      color: var(--dark-gray);
+    }
+/* Trainers Section */
+   .trainers-section {
+      margin: 4rem 0;
+    }
+  .trainers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+}
+    .trainer-card {
+      background-color: var(--white);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s;
+      position: relative;
+    }
+  .trainer-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+.trainer-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+ .trainer-details {
+      padding: 1.5rem;
+    }
+ .trainer-name {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--dark);
+    }
+ .trainer-specialty {
+      font-weight: 600;
+      color: var(--secondary);
+      margin-bottom: 0.8rem;
+      display: inline-block;
+      background-color: rgba(108, 99, 255, 0.1);
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+    }
+ .trainer-bio {
+      color: var(--dark-gray);
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+ .trainer-expertise {
+      margin-top: 1rem;
+}
+  .expertise-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+ .expertise-item i {
+      color: var(--success);
+      margin-right: 0.5rem;
+      font-size: 0.8rem;
+    }
+.trainer-social {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+}
+ .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background-color: rgba(108, 99, 255, 0.1);
+      color: var(--secondary);
+      transition: all 0.3s;
+      font-size: 0.9rem;
+    }
+  .social-link:hover {
+      background-color: var(--secondary);
+      color: var(--white);
+      transform: translateY(-3px);
+    }
+   /* Testimonials */
+    .testimonials-section {
+      margin: 4rem 0;
+    }
+ .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+  .testimonial-card {
+      background-color: var(--white);
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
+ .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 1rem;
+      left: 1.5rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      color: rgba(108, 99, 255, 0.1);
+      line-height: 1;
+      z-index: 0;
+    }
+.testimonial-content {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+      color: var(--dark-gray);
+}
+ .testimonial-author {
+      font-weight: 600;
+      color: var(--dark);
+}
+  .testimonial-meta {
+      font-size: 0.9rem;
+      color: var(--gray);
+      margin-top: 0.3rem;
+    }
+  /* FAQ Section */
+    .faq-section {
+      margin: 4rem 0;
+    }
+ .faq-item {
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+.faq-question {
+      background-color: var(--white);
+      padding: 1.5rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s;
+}
+ .faq-question:hover {
+      background-color: rgba(108, 99, 255, 0.05);
+    }
+ .faq-question i {
+      transition: transform 0.3s;
+}
+   .faq-answer {
+      padding: 0 1.5rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s, padding 0.3s;
+      background-color: var(--white);
+    }
+  .faq-item.active .faq-question {
+      background-color: rgba(108, 99, 255, 0.05);
+}
+ .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+
+    .faq-item.active .faq-answer {
+      padding: 1.5rem;
+      max-height: 500px;
+    }
+ /* Back Button */
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 3rem;
+      transition: all 0.3s;
+}
+ .back-button i {
+      margin-right: 0.5rem;
+      transition: transform 0.3s;
+    }
+  .back-button:hover {
+      color: var(--primary);
+    }
+  .back-button:hover i {
+      transform: translateX(-3px);
+}
+    /* Responsive Adjustments */
+    @media (max-width: 992px) {
+      .page-title {
+        font-size: 2.8rem;
+      }
+       .content-card, .pricing-card {
+        padding: 2rem;
+      }
+}
+    @media (max-width: 768px) {
+      .container {
+        padding: 1.5rem;
+      }
+       .page-title {
+        font-size: 2.2rem;
+      }
+        .styles-tabs {
+        justify-content: center;
+      }
+    }
+  /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+}
+  .animate-fade {
+      animation: fadeIn 0.6s ease-out forwards;
+}
+  .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="page-header animate-fade">
+      <h1 class="page-title">Premium Yoga Classes</h1>
+      <p class="page-subtitle">Discover balance, strength, and inner peace through our authentic yoga practices guided by expert instructors</p>
+    </header>
+<div class="content-card animate-fade delay-1">
+      <h2 class="section-header">Transform Your Life With Yoga</h2>
+      <p>At Sneha Fitness, we believe yoga is more than just physical exercise - it's a holistic practice that unites body, mind, and spirit. Our classes blend ancient wisdom with modern techniques to help you achieve optimal health and wellbeing.</p>
+       <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-heartbeat"></i>
+          </div>
+          <h3 class="benefit-title">Physical Health</h3>
+          <p>Improve flexibility, strength, posture, and cardiovascular health while reducing chronic pain and inflammation.</p>
+        </div>
+          <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-brain"></i>
+          </div>
+          <h3 class="benefit-title">Mental Clarity</h3>
+          <p>Reduce stress and anxiety while enhancing focus, memory, and emotional resilience through mindful practice.</p>
+        </div>
+          <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-moon"></i>
+          </div>
+          <h3 class="benefit-title">Better Sleep</h3>
+          <p>Our evening restorative sessions help regulate circadian rhythms for deeper, more restful sleep.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-weight"></i>
+          </div>
+          <h3 class="benefit-title">Weight Management</h3>
+          <p>Active yoga styles burn calories while building lean muscle mass for sustainable weight control.</p>
+        </div>
+       <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-hands-helping"></i>
+          </div>
+          <h3 class="benefit-title">Community</h3>
+          <p>Join our supportive yoga community that celebrates progress over perfection.</p>
+        </div>
+         <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-spa"></i>
+          </div>
+          <h3 class="benefit-title">Spiritual Growth</h3>
+          <p>Explore yoga philosophy and meditation to deepen your connection with yourself and the world.</p>
+        </div>
+      </div>
+</div>
+<div class="styles-section animate-fade delay-2">
+      <h2 class="section-header">Yoga Styles We Offer</h2>
+      <p class="text-center" style="max-width: 700px; margin: 0 auto 2rem;">We offer diverse yoga styles to suit all levels and objectives. Find your perfect practice.</p>
+        <div class="styles-tabs">
+        <div class="style-tab active" onclick="showStyle('hatha')">Hatha Yoga</div>
+        <div class="style-tab" onclick="showStyle('vinyasa')">Vinyasa Flow</div>
+        <div class="style-tab" onclick="showStyle('power')">Power Yoga</div>
+        <div class="style-tab" onclick="showStyle('yin')">Yin Yoga</div>
+        <div class="style-tab" onclick="showStyle('prenatal')">Prenatal Yoga</div>
+        <div class="style-tab" onclick="showStyle('pranayama')">Pranayama</div>
+      </div>
+       <div class="style-content active" id="hatha">
+        <div class="style-header">
+          <div class="style-icon">🧘</div>
+          <div class="style-details">
+            <h3>Hatha Yoga</h3>
+            <p>The foundation of all yoga styles, focusing on basic postures (asanas) and breathing techniques (pranayama). Perfect for beginners and those seeking a gentle, meditative practice.</p>
+          </div>
+        </div>
+        <div class="style-benefits">
+          <div class="style-benefit">
+            <i class="fas fa-check"></i>
+            <span>Improves flexibility and balance</span>
+          </div>
+          <div class="style-benefit">
+            <i class="fas fa-check"></i>
+            <span>Reduces stress and anxiety</span>
+          </div>
+          <div class="style-benefit">
+            <i class="fas fa-check"></i>
+            <span>Builds foundational strength</span>
+          </div>
+          <div class="style-benefit">
+            <i class="fas fa-check"></i>
+            <span>Enhances body awareness</span>
+          </div>
+        </div>
+        <p><strong>Ideal for:</strong> Beginners, seniors, those recovering from injury, or anyone seeking a slower-paced practice.</p>
+      </div>
+      <div class="style-content" id="vinyasa">
+        <div class="style-header">
+          <div class="style-icon">🌊</div>
+          <div class="style-details">
+            <h3>Vinyasa Flow</h3>
+            <p>A dynamic style where movement is synchronized with breath in flowing sequences. Each class is creatively sequenced and offers variety while maintaining the meditative quality of yoga.</p>
+          </div>
+        </div>
+         <div class="style-benefits">
+          <div class="style-benefit">
+            <i class="fas fa-check"></i>
+            <span>Builds cardiovascular endurance</span>
+          </div>
+          <div class="style-benefit">
+            <i class="fas fa-check"></i>
+            <span>Increases strength and flexibility</span>
+          </div>
+          <div class="style-benefit">
+            <i class="fas fa-check"></i>
+            <span>Promotes mind-body connection</span>
+          </div>
+          <div class="style-benefit">
+            <i class="fas fa-check"></i>
+            <span>Burns calories effectively</span>
+          </div>
+        </div>
+           <p><strong>Ideal for:</strong> Those with some yoga experience looking for a more active practice.</p>
+      </div>
+      
+      <div class="style-content" id="power">
+        <div class="style-header">
+          <div class="style-icon">💪</div>
+          <div class="style-details">
+            <h3>Power Yoga</h3>
+            <p>A vigorous, fitness-based approach to vinyasa-style yoga that builds strength, stamina, and flexibility while keeping you moving and sweating.</p>
+          </div>
+        </div>
+           <div class="style-benefits">
+          <div class="style-benefit">
+            <i class="fas fa-check"></i>
+            <span>Builds lean muscle mass</span>
+          </div>
+          <div class="style-benefit">
+            <i class="fas fa-check"></i>
+            <span>Enhances athletic performance</span>
+          </div>
+          <div class="style-benefit">
+            <i class="fas fa-check"></i>
+            <span>Improves metabolism</span>
+          </div>
+          <div class="style-benefit">
+            <i class="fas fa-check"></i>
+            <span>Develops core strength</span>
+          </div>
+        </div>
+        <p><strong>Ideal for:</strong> Fitness enthusiasts and those looking for weight loss or body toning.</p>
+      </div>
+          <div class="style-content" id="yin">
+        <div class="style-header">
+          <div class="style-icon">🌙</div>
+          <div class="style-details">
+            <h3>Yin Yoga</h3>
+            <p>A slow-paced style where poses are held for longer periods (3-5 minutes) to target deep connective tissues and fascia while cultivating mindfulness.</p>
+          </div>
+        </div>
+         <div class="style-benefits">
+          <div class="style-benefit">
+            <i class="fas fa-check"></i>
+            <span>Increases joint mobility</span>
+          </div>
+          <div class="style-benefit">
+            <i class="fas fa-check"></i>
+            <span>Reduces stress and anxiety</span>
+          </div>
+          <div class="style-benefit">
+            <i class="fas fa-check"></i>
+            <span>Improves flexibility</span>
+          </div>
+          <div class="style-benefit">
+            <i class="fas fa-check"></i>
+            <span>Promotes relaxation</span>
+          </div>
+        </div>
+          <p><strong>Ideal for:</strong> Those needing stress relief, athletes for recovery, or anyone wanting to complement more active practices.</p>
+      </div>
+       <div class="style-content" id="prenatal">
+        <div class="style-header">
+          <div class="style-icon">🤰</div>
+          <div class="style-details">
+            <h3>Prenatal Yoga</h3>
+            <p>Specially designed for expectant mothers to support pregnancy, prepare for childbirth, and connect with their changing bodies and growing babies.</p>
+          </div>
+        </div>
+           <div class="style-benefits">
+          <div class="style-benefit">
+            <i class="fas fa-check"></i>
+            <span>Eases pregnancy discomfort</span>
+          </div>
+          <div class="style-benefit">
+            <i class="fas fa-check"></i>
+            <span>Prepares body for labor</span>
+          </div>
+          <div class="style-benefit">
+            <i class="fas fa-check"></i>
+            <span>Reduces stress and anxiety</span>
+          </div>
+          <div class="style-benefit">
+            <i class="fas fa-check"></i>
+            <span>Connects with baby</span>
+          </div>
+        </div>
+           <p><strong>Ideal for:</strong> Expectant mothers in any trimester (with doctor's approval).</p>
+      </div>
+        <div class="style-content" id="pranayama">
+        <div class="style-header">
+          <div class="style-icon">🌀</div>
+          <div class="style-details">
+            <h3>Pranayama & Meditation</h3>
+            <p>Ancient breathing techniques and meditation practices that calm the mind, reduce stress, and increase energy levels and focus.</p>
+          </div>
+        </div>
+        <div class="style-benefits">
+          <div class="style-benefit">
+            <i class="fas fa-check"></i>
+            <span>Reduces stress and anxiety</span>
+          </div>
+          <div class="style-benefit">
+            <i class="fas fa-check"></i>
+            <span>Improves lung capacity</span>
+          </div>
+          <div class="style-benefit">
+            <i class="fas fa-check"></i>
+            <span>Enhances mental clarity</span>
+          </div>
+          <div class="style-benefit">
+            <i class="fas fa-check"></i>
+            <span>Boosts energy levels</span>
+          </div>
+        </div>
+        <p><strong>Ideal for:</strong> Anyone seeking stress relief, better sleep, or enhanced focus.</p>
+      </div>
+</div>
+<div class="pricing-section animate-fade delay-2">
+      <h2 class="section-header">Yoga Membership</h2>
+      <p class="text-center" style="max-width: 700px; margin: 0 auto 2rem;">Choose the perfect plan for your yoga journey with our flexible membership options.</p>
+       <div class="pricing-card">
+        <div class="price-amount">1499</div>
+        <div class="price-duration">per month | Cancel anytime</div>
+        
+        <div class="price-features">
+          <div class="price-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Unlimited access to all regular yoga classes</span>
+          </div>
+          <div class="price-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Free participation in weekend wellness workshops</span>
+          </div>
+          <div class="price-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Complimentary yoga mat usage</span>
+          </div>
+          <div class="price-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>10% discount on yoga accessories</span>
+          </div>
+          <div class="price-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Monthly progress assessment</span>
+          </div>
+          <div class="price-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Access to online video library</span>
+          </div>
+        </div>
+       <a href="#" class="cta-button">Start Your Yoga Journey</a>
+      </div>
+      <p style="margin-top: 2rem; color: var(--dark-gray);">* First-time students get 50% off their first month. Ask about our family and couple discounts.</p>
+</div>
+   <div class="schedule-section animate-fade delay-3">
+      <h2 class="section-header">Class Schedule</h2>
+      <p class="text-center" style="max-width: 700px; margin: 0 auto 2rem;">We offer classes throughout the week to fit your busy schedule.</p>
+        <div class="schedule-container">
+        <div class="schedule-card">
+          <div class="schedule-day">Monday - Friday</div>
+          <div class="schedule-session">
+            <span class="session-time">6:00 AM - 7:00 AM</span>
+            <span class="session-style">Hatha Yoga</span>
+          </div>
+          <div class="schedule-session">
+            <span class="session-time">7:30 AM - 8:30 AM</span>
+            <span class="session-style">Pranayama & Meditation</span>
+          </div>
+          <div class="schedule-session">
+            <span class="session-time">6:00 PM - 7:00 PM</span>
+            <span class="session-style">Vinyasa Flow</span>
+          </div>
+          <div class="schedule-session">
+            <span class="session-time">7:30 PM - 8:30 PM</span>
+            <span class="session-style">Yin Yoga</span>
+          </div>
+        </div>
+           <div class="schedule-card">
+          <div class="schedule-day">Saturday</div>
+          <div class="schedule-session">
+            <span class="session-time">7:00 AM - 8:30 AM</span>
+            <span class="session-style">Power Yoga</span>
+          </div>
+          <div class="schedule-session">
+            <span class="session-time">9:00 AM - 10:30 AM</span>
+            <span class="session-style">Prenatal Yoga</span>
+          </div>
+          <div class="schedule-session">
+            <span class="session-time">4:00 PM - 5:30 PM</span>
+            <span class="session-style">Yoga for Beginners</span>
+          </div>
+          <div class="schedule-session">
+            <span class="session-time">6:00 PM - 7:00 PM</span>
+            <span class="session-style">Restorative Yoga</span>
+          </div>
+        </div>
+         <div class="schedule-card">
+          <div class="schedule-day">Sunday</div>
+          <div class="schedule-session">
+            <span class="session-time">8:00 AM - 9:00 AM</span>
+            <span class="session-style">Meditation Circle</span>
+          </div>
+          <div class="schedule-session">
+            <span class="session-time">10:00 AM - 11:30 AM</span>
+            <span class="session-style">Family Yoga</span>
+          </div>
+          <div class="schedule-session">
+            <span class="session-time">5:00 PM - 6:30 PM</span>
+            <span class="session-style">Yoga Nidra</span>
+          </div>
+        </div>
+      </div>
+</div>
+  <div class="trainers-section animate-fade delay-3">
+      <h2 class="section-header">Meet Our Yoga Instructors</h2>
+      <p class="text-center" style="max-width: 700px; margin: 0 auto 2rem;">Our certified instructors bring years of experience and authentic knowledge to guide your practice.</p>
+        <div class="trainers-grid">
+        <div class="trainer-card">
+          <img src="https://t3.ftcdn.net/jpg/05/16/91/34/360_F_516913485_n0Gn4pIPqA6qPgy036uCIU58JE3aewrY.jpg" alt="Neha Patil" class="trainer-image">
+          <div class="trainer-details">
+            <h3 class="trainer-name">Neha Patil</h3>
+            <span class="trainer-specialty">Hatha & Restorative Yoga</span>
+            <p class="trainer-bio">With over 8 years of teaching experience, Neha brings a calm, nurturing energy to her classes. Her deep understanding of alignment and anatomy helps students practice safely while progressing in their journey.</p>
+             <div class="trainer-expertise">
+              <div class="expertise-item">
+                <i class="fas fa-check"></i>
+                <span>RYT-500 Certified</span>
+              </div>
+              <div class="expertise-item">
+                <i class="fas fa-check"></i>
+                <span>Yoga Therapy Training</span>
+              </div>
+              <div class="expertise-item">
+                <i class="fas fa-check"></i>
+                <span>300+ Students Trained</span>
+              </div>
+              <div class="expertise-item">
+                <i class="fas fa-check"></i>
+                <span>Wellness Retreat Leader</span>
+              </div>
+            </div>
+            
+            <div class="trainer-social">
+              <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+       <div class="trainer-card">
+          <img src="https://media.istockphoto.com/id/1483989790/photo/adult-indian-male-yoga-instructor-smiling-at-the-camera-and-holding-a-yoga-mat-under-his-arm.jpg?s=612x612&w=0&k=20&c=vZZ1--vZ_LF612IrI7jXBBxdG5fExnOO3rYu-uHAtiM=" alt="Ravi Mehta" class="trainer-image">
+          <div class="trainer-details">
+            <h3 class="trainer-name">Ravi Mehta</h3>
+            <span class="trainer-specialty">Pranayama & Meditation</span>
+            <p class="trainer-bio">Ravi brings 10+ years of experience in therapeutic yoga and breathwork. His deep knowledge of pranayama techniques helps students manage stress, improve lung capacity, and enhance mental clarity.</p>
+              <div class="trainer-expertise">
+              <div class="expertise-item">
+                <i class="fas fa-check"></i>
+                <span>S-VYASA Certified</span>
+              </div>
+              <div class="expertise-item">
+                <i class="fas fa-check"></i>
+                <span>Advanced Pranayama Training</span>
+              </div>
+              <div class="expertise-item">
+                <i class="fas fa-check"></i>
+                <span>Stress Management Expert</span>
+              </div>
+              <div class="expertise-item">
+                <i class="fas fa-check"></i>
+                <span>Corporate Wellness Coach</span>
+              </div>
+            </div>
+             <div class="trainer-social">
+              <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="trainer-card">
+          <img src="https://t3.ftcdn.net/jpg/06/64/38/36/360_F_664383658_KdgBg6alvGbttmn5i64uaL2BeiVDjfg7.jpg" alt="Anita Deshmukh" class="trainer-image">
+          <div class="trainer-details">
+            <h3 class="trainer-name">Anita Deshmukh</h3>
+            <span class="trainer-specialty">Power & Prenatal Yoga</span>
+            <p class="trainer-bio">Anita combines her background in fitness with traditional yoga to create dynamic, results-oriented classes. She specializes in women's wellness, offering modifications for all life stages.</p>
+            <div class="trainer-expertise">
+              <div class="expertise-item">
+                <i class="fas fa-check"></i>
+                <span>RYT-300 Certified</span>
+              </div>
+              <div class="expertise-item">
+                <i class="fas fa-check"></i>
+                <span>Prenatal Yoga Specialist</span>
+              </div>
+              <div class="expertise-item">
+                <i class="fas fa-check"></i>
+                <span>6+ Years Experience</span>
+              </div>
+              <div class="expertise-item">
+                <i class="fas fa-check"></i>
+                <span>Female Wellness Coach</span>
+              </div>
+            </div>
+          <div class="trainer-social">
+              <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+</diV>
+   <div class="testimonials-section animate-fade delay-4">
+      <h2 class="section-header">Student Experiences</h2>
+      <p class="text-center" style="max-width: 700px; margin: 0 auto 2rem;">Hear from our students about their transformative yoga journeys.</p>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            "After just 3 months of practicing with Neha, my chronic back pain has reduced by 80%. Her attention to alignment and modifications made yoga accessible despite my limitations."
+          </div>
+          <div class="testimonial-author">Priya M.</div>
+          <div class="testimonial-meta">45 years | Hatha Yoga | 6 months</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            "Ravi's pranayama classes changed my life. As an asthma patient, I never imagined I could breathe so freely. My inhaler use has decreased significantly since starting his sessions."
+          </div>
+          <div class="testimonial-author">Rahul K.</div>
+          <div class="testimonial-meta">32 years | Pranayama | 4 months</div>
+        </div>
+       <div class="testimonial-card">
+          <div class="testimonial-content">
+            "Anita's power yoga classes helped me lose 12kg and completely transformed my body. More importantly, I've gained strength and confidence I never knew I had."
+          </div>
+          <div class="testimonial-author">Sneha P.</div>
+          <div class="testimonial-meta">28 years | Power Yoga | 8 months</div>
+        </div>
+      </div>
+</div>
+  <div class="faq-section animate-fade delay-4">
+      <h2 class="section-header">Frequently Asked Questions</h2>
+         <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span>I'm new to yoga. Which class should I start with?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>We recommend starting with our <strong>Hatha Yoga</strong> or <strong>Beginner's Yoga</strong> classes. These foundational classes move at a slower pace with detailed instructions on alignment and breathing. Our instructors provide modifications for all levels, so you can progress at your own pace.</p>
+          <p>If you're completely new, consider booking a <strong>private introductory session</strong> to learn the basics before joining group classes.</p>
+        </div>
+      </div>
+       <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span>What should I bring to my first yoga class?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>For your first class, we recommend bringing:</p>
+          <ul>
+            <li>Comfortable, stretchy clothing that allows movement</li>
+            <li>A water bottle</li>
+            <li>A small towel</li>
+            <li>An open mind!</li>
+          </ul>
+          <p>We provide yoga mats and all necessary props for beginners. As you continue your practice, you may want to invest in your own mat for hygiene and comfort.</p>
+        </div>
+      </div>
+        <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span>How often should I practice yoga to see results?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Consistency is key in yoga. For noticeable results:</p>
+          <ul>
+            <li><strong>1-2 times per week:</strong> You'll begin to feel more relaxed and may notice slight improvements in flexibility</li>
+            <li><strong>3 times per week:</strong> Significant improvements in strength, flexibility, and stress levels</li>
+            <li><strong>4-5 times per week:</strong> Transformational changes in body composition, posture, and mental clarity</li>
+          </ul>
+          <p>Even practicing just 10-15 minutes daily at home can complement your studio sessions and accelerate progress.</p>
+        </div>
+      </div>
+       <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span>Is yoga suitable for people with injuries or medical conditions?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Yoga can be wonderfully therapeutic for many conditions when practiced appropriately. We've helped students with:</p>
+          <ul>
+            <li>Back pain and spinal issues</li>
+            <li>Joint problems (knees, hips, shoulders)</li>
+            <li>Hypertension and heart conditions</li>
+            <li>Diabetes and metabolic disorders</li>
+            <li>Anxiety and depression</li>
+          </ul>
+          <p><strong>Important:</strong> Always inform your instructor about any injuries or medical conditions before class. For serious conditions, we recommend consulting with your doctor first and possibly starting with private sessions.</p>
+        </div>
+      </div>
+         <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span>Can yoga help with weight loss?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! While yoga may not burn as many calories as high-intensity workouts initially, it contributes to weight loss in several powerful ways:</p>
+          <ul>
+            <li><strong>Active styles</strong> like Power Yoga and Vinyasa Flow burn significant calories</li>
+            <li>Builds <strong>lean muscle mass</strong> which increases metabolism</li>
+            <li>Reduces <strong>cortisol levels</strong> (stress hormone linked to belly fat)</li>
+            <li>Improves <strong>mind-body connection</strong> leading to better food choices</li>
+            <li>Enhances <strong>digestion and detoxification</strong></li>
+          </ul>
+          <p>For best weight loss results, combine our Power Yoga classes with our nutrition guidance and maintain a consistent practice.</p>
+        </div>
+      </div>
+</div>
+  <a href="services.html" class="back-button animate-fade delay-4">
+      <i class="fas fa-arrow-left"></i> Back to All Services
+    </a>
+  </div>
+  <script>
+    // Show yoga style content
+    function showStyle(styleId) {
+      // Hide all style contents
+      document.querySelectorAll('.style-content').forEach(content => {
+        content.classList.remove('active');
+      });
+       // Deactivate all tabs
+      document.querySelectorAll('.style-tab').forEach(tab => {
+        tab.classList.remove('active');
+      });
+         // Activate selected tab
+      event.currentTarget.classList.add('active');
+      
+      // Show selected content
+      document.getElementById(styleId).classList.add('active');
+    }
+      // Toggle FAQ items
+    function toggleFAQ(element) {
+      const faqItem = element.parentElement;
+      faqItem.classList.toggle('active');
+    }
+      // Simple animation on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+      const animateElements = document.querySelectorAll('.animate-fade');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, { threshold: 0.1 });
+         animateElements.forEach(element => {
+        observer.observe(element);
+      });
+    });
+  </script>
+</body>
+</html>

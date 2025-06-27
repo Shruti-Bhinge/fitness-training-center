@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful - Sneha Fitness</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .success-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .success-icon {
+            font-size: 80px;
+            color: #2ed573;
+            margin-bottom: 20px;
+        }
+        
+        .purchase-details {
+            text-align: left;
+            margin: 30px 0;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+        
+        .purchase-details h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .purchase-details p {
+            margin: 10px 0;
+        }
+        
+        .btn-dashboard {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+        
+        .btn-dashboard:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container flex">
+            <div class="logo">Sneha<span>Fitness</span></div>
+            <nav>
+                <ul>
+                    <li><a href="index1.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                    <li><a href="review.html">Review</a></li>
+                    <li><a href="logout.php" class="btn" style="background-color: #ff4757;">Sign Out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="success-container">
+        <div class="success-icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        
+        <h2>Payment Successful!</h2>
+        <p>Thank you for your purchase. Your subscription has been activated.</p>
+        
+        <div class="purchase-details" id="purchaseDetails">
+            <!-- Details will be filled by JavaScript -->
+        </div>
+        
+        <a href="index1.html" class="btn-dashboard">Go to Dashboard</a>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="logo">Sneha<span>Fitness</span></div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Sneha Fitness. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Retrieve purchase details from localStorage
+        const purchaseDetails = JSON.parse(localStorage.getItem('purchaseDetails'));
+        
+        if (purchaseDetails) {
+            document.getElementById('purchaseDetails').innerHTML = `
+                <h3>Purchase Details</h3>
+                <p><strong>Service:</strong> ${purchaseDetails.service}</p>
+                <p><strong>Amount Paid:</strong> ₹${purchaseDetails.price}</p>
+                <p><strong>Date:</strong> ${purchaseDetails.date}</p>
+                <p><strong>Transaction ID:</strong> ${purchaseDetails.transactionId}</p>
+                <p>We've sent these details to your email as well.</p>
+            `;
+            
+            // Clear the stored details
+            localStorage.removeItem('purchaseDetails');
+        } else {
+            document.getElementById('purchaseDetails').innerHTML = `
+                <p>No purchase details found. Please contact support if you have any questions.</p>
+            `;
+        }
+    </script>
+</body>
+</html>

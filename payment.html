@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Sneha Fitness</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .payment-container {
+            max-width: 800px;
+            margin: 120px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .payment-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .payment-details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+        
+        .payment-methods {
+            margin-top: 30px;
+        }
+        
+        .payment-method {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .payment-method:hover {
+            border-color: var(--primary);
+        }
+        
+        .payment-method i {
+            font-size: 30px;
+            margin-right: 15px;
+            color: var(--primary);
+        }
+        
+        .qr-code {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            display: none;
+        }
+        
+        .qr-code img {
+            max-width: 300px;
+            margin-bottom: 15px;
+        }
+        
+        .btn-pay {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-pay:hover {
+            background: #25a25a;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container flex">
+            <div class="logo">Sneha<span>Fitness</span></div>
+            <nav>
+                <ul>
+                    <li><a href="index1.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                    <li><a href="review.html">Review</a></li>
+                    <li><a href="logout.php" class="btn" style="background-color: #ff4757;">Sign Out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="payment-container">
+        <div class="payment-header">
+            <h2>Complete Your Purchase</h2>
+            <p>Secure payment gateway powered by PhonePe</p>
+        </div>
+        
+        <div class="payment-details">
+            <div>
+                <h3 id="service-name">Service Name</h3>
+                <p>Monthly Subscription</p>
+            </div>
+            <div style="text-align: right;">
+                <h3 id="service-price">₹0</h3>
+                <p>+ GST if applicable</p>
+            </div>
+        </div>
+        
+        <div class="payment-methods">
+            <h3>Choose Payment Method</h3>
+            
+            <div class="payment-method" onclick="showQRCode()">
+                <i class="fas fa-qrcode"></i>
+                <div>
+                    <h4>UPI QR Code</h4>
+                    <p>Scan the QR code with any UPI app</p>
+                </div>
+            </div>
+            
+            <div class="payment-method">
+                <i class="fas fa-mobile-alt"></i>
+                <div>
+                    <h4>UPI Payment</h4>
+                    <p>Pay directly via UPI ID</p>
+                </div>
+            </div>
+            
+            <div class="payment-method">
+                <i class="fas fa-credit-card"></i>
+                <div>
+                    <h4>Credit/Debit Card</h4>
+                    <p>Pay with Visa, Mastercard, etc.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="qr-code" id="qrCodeSection">
+            <h4>Scan this QR code with PhonePe, GPay, or any UPI app</h4>
+            <img src="phone pay scanner.jpg" alt="PhonePe QR Code">
+            <p>After payment, you'll be redirected automatically</p>
+        </div>
+        
+        <button class="btn-pay" onclick="completePayment()">I've Completed the Payment</button>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="logo">Sneha<span>Fitness</span></div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Sneha Fitness. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Get service details from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const serviceName = urlParams.get('service');
+        const servicePrice = urlParams.get('price');
+        
+        // Display service details
+        document.getElementById('service-name').textContent = serviceName;
+        document.getElementById('service-price').textContent = `₹${servicePrice}`;
+        
+        function showQRCode() {
+            document.getElementById('qrCodeSection').style.display = 'block';
+        }
+        
+        function completePayment() {
+            // In a real implementation, you would verify payment here
+            // For demo, we'll just redirect to thank you page
+            
+            // Store purchase details in localStorage
+            localStorage.setItem('purchaseDetails', JSON.stringify({
+                service: serviceName,
+                price: servicePrice,
+                date: new Date().toLocaleDateString(),
+                transactionId: 'TXN' + Math.floor(Math.random() * 1000000)
+            }));
+            
+            window.location.href = 'payment-success.html';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - Sneha Fitness</title>
+    <style>
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f1f2f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container */
+.form-container {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Title */
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #ff4757;
+}
+
+/* Input Fields */
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border 0.3s ease;
+}
+
+.form-container input:focus {
+    border-color: #2ed573;
+    outline: none;
+}
+
+/* Buttons */
+.form-container button {
+    width: 100%;
+    background: #ff4757;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.form-container button:hover {
+    background: #e84118;
+}
+
+/* Links */
+.form-container .link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.form-container .link a {
+    color: #2ed573;
+    text-decoration: none;
+}
+
+.form-container .link a:hover {
+    text-decoration: underline;
+}
+</style>
+
+</head>
+<body>
+<div class="container">
+    <h2>Login</h2>
+    <form action="login.php" method="POST">
+        <input type="email" name="email" placeholder="Email" required /><br><br>
+        <input type="password" name="password" placeholder="Password" required /><br><br>
+        <button type="submit">Login</button>
+    </form>
+    <p>Not registered yet? <a href="register.html">Register here</a></p>
+</div>
+</body>
+</html>

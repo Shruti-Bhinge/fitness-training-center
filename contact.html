@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneha Fitness Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+    <style>
+        /* Popup Styles */
+        .thank-you-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #4CAF50;
+            color: white;
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            z-index: 1000;
+            text-align: center;
+            max-width: 80%;
+            animation: fadeIn 0.3s;
+        }
+        
+        .thank-you-popup i {
+            font-size: 40px;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .thank-you-popup p {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+
+     .contact-box {
+      background: white;
+      margin-top: 10px; /* or use 0 if you want it completely removed */
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      color: var(--dark);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .info-item {
+      background: #fff;
+      padding: 25px;
+      border-left: 4px solid var(--primary);
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .info-item h3 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+      color: var(--primary);
+    }
+
+    .info-item p {
+      margin: 0;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 40px 0 20px;
+      text-align: center;
+    }
+
+    footer .logo {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    footer .logo span {
+      color: var(--primary);
+    }
+
+    .social-links a {
+      color: white;
+      margin: 0 10px;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #ff6b81;
+    }
+
+    .btn {
+    padding: 12px 30px;
+    background: var(--primary);
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    }
+    .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 600px) {
+      .flex {
+        flex-direction: column;
+      }
+      nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+      }
+      nav ul li {
+        margin: 10px 0;
+      }
+    } 
+    </style>
+    <body>
+        </head>
+<body>
+    <div class="overlay hidden" id="overlay"></div>
+    <div class="thank-you-popup hidden" id="thankYouPopup">
+        <i class="fas fa-check-circle"></i>
+        <p>Thank you! We will contact you soon.</p>
+    </div>
+
+    <header>
+        <div class="container flex">
+            <div class="logo">Sneha<span>Fitness</span></div>
+            <nav>
+                <ul>
+                    <li><a href="index1.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="Contact.html" class="active">Contact</a></li>
+                    <li><a href="review.html">Review</a></li>
+                    <li><a href="logout.php" class="btn" style="background-color: #ff4757;">Sign Out</a></li>
+                </ul>
+            </nav>
+            
+        </div>
+    </header>
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-form">
+
+
+                <form method="POST" action="Contact.php">
+                <div class="form-group">
+                  <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                  <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                  <div class="form-group">
+                  <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                </div>
+                <div class="form-group">
+                  <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                </div>
+
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                 <button type="submit" class="btn">Send Message</button>
+
+                 <button id="rzp-button1" type="button" class="btn">Pay</button>
+
+
+                </div>
+               </form>
+
+
+            </div>
+        </div>
+    </section>
+    <section class="container contact-box">
+    <h2>Contact Me (Owner Information)</h2>
+    <div class="info-grid">
+      <div class="info-item">
+        <h3>👩 Owner Name</h3>
+        <p>Sneha Bhinge</p>
+      </div>
+      <div class="info-item">
+        <h3>🏠 Address</h3>
+        <p> vasant Nagar,Nanded, Maharashtra, India - 431605</p>
+      </div>
+      <div class="info-item">
+        <h3>📧 Email</h3>
+        <p>snehafitness@gmail.com</p>
+      </div>
+      <div class="info-item">
+        <h3>📞 Phone Number</h3>
+        <p>+91 9876543210</p>
+      </div>
+      <div class="info-item">
+        <h3>🌐 Website</h3>
+        <p>www.snehafitness.com</p>
+      </div>
+      <div class="info-item">
+        <h3>📱 Social Media</h3>
+        <p>Instagram: @sneha_fitness<br>Facebook: /snehafit</p>
+      </div>
+    </div>
+  </section>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+
+    <footer>
+        <div class="container">
+            <div class="logo">Sneha<span>Fitness</span></div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Sneha Fitness. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+    </body>
